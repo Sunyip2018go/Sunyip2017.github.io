@@ -90,12 +90,14 @@
 <meta property="og:url" content="http://www.sunyip.top/2017/02/27/dataTables.js/index.html">
 <meta property="og:site_name" content="小白的漫漫前端路">
 <meta property="og:description" content="Datatables是一款jquery表格插件。它是一个高度灵活的工具，可以将任何HTML表格添加高级的交互功能。">
-<meta property="og:image" content="http://ol3qapevr.bkt.clouddn.com/static/images/initialization.png?imageView2/2/w/600">
-<meta property="og:updated_time" content="2017-02-27T06:21:10.813Z">
+<meta property="og:image" content="http://ol3qapevr.bkt.clouddn.com/static/images/initialization.png">
+<meta property="og:image" content="http://ol3qapevr.bkt.clouddn.com/static/images/initialization_zh.png">
+<meta property="og:image" content="http://ol3qapevr.bkt.clouddn.com/static/images/data_arr.png">
+<meta property="og:updated_time" content="2017-02-27T09:30:11.158Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="dataTables表格插件入门">
 <meta name="twitter:description" content="Datatables是一款jquery表格插件。它是一个高度灵活的工具，可以将任何HTML表格添加高级的交互功能。">
-<meta name="twitter:image" content="http://ol3qapevr.bkt.clouddn.com/static/images/initialization.png?imageView2/2/w/600">
+<meta name="twitter:image" content="http://ol3qapevr.bkt.clouddn.com/static/images/initialization.png">
 
 
 
@@ -372,7 +374,101 @@
     $(&quot;.td&quot;).DataTable();           //初始化table
 &lt;/script&gt;    
 </code></pre><p>运行页面显示效果如下:</p>
-<img title="初始化页面" src="http://ol3qapevr.bkt.clouddn.com/static/images/initialization.png?imageView2/2/w/600">
+<img title="初始化页面" src="http://ol3qapevr.bkt.clouddn.com/static/images/initialization.png">
+<p>可以看出dataTables默认是英文状态,并且带有<strong>每页显示数据的条数</strong>、<strong>搜索框</strong>、<strong>数据记录</strong>、<strong>分页器</strong>,首先我们将英文转换成中文：</p>
+<pre><code>&lt;script&gt;
+$(&quot;.td&quot;).DataTable({
+    //设置语言
+  &quot;oLanguage&quot;: {
+    &quot;sLengthMenu&quot;: &quot;每页显示 _MENU_ 条记录&quot;,
+    &quot;sZeroRecords&quot;: &quot;抱歉， 没有找到&quot;,
+    &quot;sInfo&quot;: &quot;从 _START_ 到 _END_ /共 _TOTAL_ 条数据&quot;,
+    &quot;sInfoEmpty&quot;: &quot;没有数据&quot;,
+    &quot;sInfoFiltered&quot;: &quot;(从 _MAX_ 条数据中检索)&quot;,
+    &quot;sZeroRecords&quot;: &quot;没有检索到数据&quot;,
+    &quot;sSearch&quot;: &quot;名称:&quot;,
+    &quot;oPaginate&quot;: {
+      &quot;sFirst&quot;: &quot;首页&quot;,
+      &quot;sPrevious&quot;: &quot;前一页&quot;,
+      &quot;sNext&quot;: &quot;后一页&quot;,
+      &quot;sLast&quot;: &quot;尾页&quot;,
+    },
+  },
+});
+</code></pre><p></p>
+<p>页面变为中文：</p>
+<img title="初始化页面" src="http://ol3qapevr.bkt.clouddn.com/static/images/initialization_zh.png">
+<p>接下来我们填充一些数据模拟一下：</p>
+<pre><code>    $(function(){
+    //模拟数据
+      var data = [
+          [
+            &quot;小明&quot;,
+            &quot;18&quot;,
+            &quot;男&quot;,
+        ],
+        [
+            &quot;小红&quot;,
+            &quot;17&quot;,
+            &quot;女&quot;,
+        ],
+        [
+            &quot;小青&quot;,
+            &quot;28&quot;,
+            &quot;女&quot;,
+        ],
+        [
+            &quot;小白&quot;,
+            &quot;17&quot;,
+            &quot;女&quot;,
+        ],
+        [
+            &quot;小黄&quot;,
+            &quot;15&quot;,
+            &quot;男&quot;,
+        ],
+        [
+            &quot;小紫&quot;,
+            &quot;14&quot;,
+            &quot;女&quot;,
+        ],
+        [
+            &quot;小天&quot;,
+            &quot;21&quot;,
+            &quot;男&quot;,
+        ],
+        [
+            &quot;小绿&quot;,
+            &quot;17&quot;,
+            &quot;男&quot;,
+        ]
+
+    ];
+    $(&quot;.td&quot;).DataTable({
+        //数据调取
+         &quot;data&quot;:data,
+        //设置语言
+      &quot;oLanguage&quot;: {
+        &quot;sLengthMenu&quot;: &quot;每页显示 _MENU_ 条记录&quot;,
+        &quot;sZeroRecords&quot;: &quot;抱歉， 没有找到&quot;,
+        &quot;sInfo&quot;: &quot;从 _START_ 到 _END_ /共 _TOTAL_ 条数据&quot;,
+        &quot;sInfoEmpty&quot;: &quot;没有数据&quot;,
+        &quot;sInfoFiltered&quot;: &quot;(从 _MAX_ 条数据中检索)&quot;,
+        &quot;sZeroRecords&quot;: &quot;没有检索到数据&quot;,
+        &quot;sSearch&quot;: &quot;名称:&quot;,
+        &quot;oPaginate&quot;: {
+          &quot;sFirst&quot;: &quot;首页&quot;,
+          &quot;sPrevious&quot;: &quot;前一页&quot;,
+          &quot;sNext&quot;: &quot;后一页&quot;,
+          &quot;sLast&quot;: &quot;尾页&quot;,
+        },
+      },
+    });
+})
+</code></pre><p></p>
+<p><strong>这里一定要记得将数据赋值给data属性</strong></p>
+<img title="初始化页面" src="http://ol3qapevr.bkt.clouddn.com/static/images/data_arr.png">
+<p>除了用数组的方式定义数据，我们还可以使用对象的方式：</p>
 </the>
       
     </div>
