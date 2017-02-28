@@ -92,7 +92,7 @@
 <meta property="og:description" content="gulp作为前端自动化工具，可以大大简化我们的工作流程">
 <meta property="og:image" content="http://ol3qapevr.bkt.clouddn.com/static/images/packageJson.png">
 <meta property="og:image" content="http://ol3qapevr.bkt.clouddn.com/static/images/package_y.png">
-<meta property="og:updated_time" content="2017-02-28T07:26:17.590Z">
+<meta property="og:updated_time" content="2017-02-28T08:05:45.353Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="gulp入门">
 <meta name="twitter:description" content="gulp作为前端自动化工具，可以大大简化我们的工作流程">
@@ -374,8 +374,104 @@
 <p>这样会快速生成package.json文件，当然里面的内容也会为空，像这样：</p>
 <img title="快速生成package.json" src="http://ol3qapevr.bkt.clouddn.com/static/images/package_y.png">
 <p>在项目中安装gulp<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install gulp --save-dev</div></pre></td></tr></table></figure></p>
-<p>–save：自动把模块和版本号添加到package.json中的dependencies部分<br>–save-dev： 自动把模块和版本号添加到package.json中的devdependencies部分<br>通俗点讲 –save-dev 是你开发时候依赖的东西，–save 是你发布之后还依赖的东西。</p>
-</the>
+<p>–save：自动把模块和版本号添加到package.json中的dependencies部分<br>–save-dev： 自动把模块和版本号添加到package.json中的devdependencies部分<br>通俗点讲 –save-dev 是你开发时候依赖的东西，–save 是你发布之后还依赖的东西。<br>这里说一个小技巧，<strong>–save-dev</strong>可以简写成<strong>-D</strong><br>执行完这一步会在项目目录中生成node_modules文件夹，gulp安装在node_modules文件夹内，打开package.json会看到gulp的版本号在里面，以后我们安装的gulp的各种插件也会出现在里面；</p>
+<h3 id="3、安装gulp插件"><a href="#3、安装gulp插件" class="headerlink" title="3、安装gulp插件"></a>3、安装gulp插件</h3><pre><code>npm install 
+    gulp-imagemin(图片压缩)  
+    gulp-uglify(压缩javascript) 
+    gulp-concat(合并javascript) 
+    gulp-clean-css(压缩css)  
+    browser-sync(页面实时开发) 
+    gulp-postcss(css处理) 
+    gulp-jshint(检测javacript语法) 
+    gulp-rename(重命名)
+    gulp-cache(只压缩修改的图片，已经压缩的不再压缩，节省时间)
+    gulp-pngquant(深度压缩图片)
+    gulp-clean(项目完成后清除多余的文件夹)
+    gulp.spritesmith(雪碧图)
+--save-dev
+</code></pre><h3 id="4、编写gulpfile-js"><a href="#4、编写gulpfile-js" class="headerlink" title="4、编写gulpfile.js"></a>4、编写gulpfile.js</h3><pre><code>//导入工具包 require(&apos;node_modules里对应模块&apos;)
+var gulp          = require(&apos;gulp&apos;),
+    imageMin =  require(&quot;gulp-imagemin&quot;),
+    uglify         =  require(&apos;gulp-uglify&apos;),
+    concat       =  require(&apos;gulp-concat&apos;),
+    minifyCss   =  require(&apos;gulp-clean-css&apos;),
+    browserSync  = require(&apos;brower-sync&apos;),
+    jshint          =  require(&apos;gulp-jshint&apos;)，
+    cache           = require(&apos;gulp-cache&apos;),
+    pngquant    = require(&apos;gulp-pngquant&apos;);
+    postcss          = require(&apos;gulp-postcss&apos;),
+    spritesmith     = require(&apos;gulp.spritesmith&apos;),
+    clean          =   require(&apos;gulp-clean&apos;);
+
+//操作javascript
+gulp.task(&apos;js&apos;,function(){
+    gulp.src(&apos;src/js/*.js&apos;)
+        .pipe(jshint()).    //检测
+        pipe(concat(&apos;all.js&apos;)).     //合并
+        pipe(uglify({         //压缩
+                mangle: true, //类型：Boolean 默认：true 是否修改变量名
+                compress: true, //类型：Boolean 默认：true 是否完全压缩
+                preserveComments: &apos;all&apos;  //保留所有注释
+        })).     
+    gulp.src([&apos;src/js/index.js&apos;,&apos;src/js/detail.js&apos;]) //多个文件以数组形式传入
+    //除了test1.js和test2.js（**匹配src/js的0个或多个子文件夹）
+    gulp.src([&apos;src/js/*.js&apos;, &apos;!src/js/**/{test1,test2}.js&apos;]) 
+        pipe(gulp.dest(&apos;dist/js&apos;));
+});
+
+//操作图片
+gulp.task(&apos;img&apos;,function(){
+    gulp.src(&apos;src/img/*.{png,jpg,gif,ico}&apos;)
+        .pipe(cache(imageMin({
+            progressive:true,
+            svgoPlugins:[{removeViewBox:false}], //不要移除svg的viewbox属性
+            use:[pngquant()]   //使用pngquant深度压缩png图片的imagemin插件
+        })))
+        .pipe(gulp.dest(&apos;dist/img&apos;))
+});
+
+//实施开发
+gulp.task(&apos;browser-sync&apos;,function(){
+    browserSync({
+        files:&apos;**&apos;,
+        server:{
+            baseDir:&apos;./&apos;
+        }
+    });    
+});
+
+//操作小图片形成雪碧图
+gulp.task(&apos;sprites&apos;,function(){
+    gulp.src(&apos;spritesImg/*.png&apos;)
+        .pipe(spritesmith({
+            imgName:&apos;sprite.png&apos;,   //保存合并后图片的地址
+            cssName：&apos;dist/spritesCss/sprites.css&apos;,   //保存合并后css的地址
+            padding:5,  //合并时图片之间的距离
+            algorithm:&apos;binary-tree&apos;,   //注释1
+            cssTemplate:&apos;css/handlebarsStr.css&apos;  //注释2
+        }))
+        .pipe(gulp.dest(&apos;dist/spritesImg&apos;))
+})
+
+//操作css
+gulp.task(&apos;css&apos;,function(){     
+    var processors = [];
+    gulp.src(&apos;./src/*.css&apos;)      
+        .pipe(postcss(processors))
+        .pipe(gulp.dest(&apos;./dist/css&apos;));     
+    });
+
+gulp.task(&apos;clean&apos;, function () {
+    return gulp.src(&apos;src&apos;, {read: false})
+                .pipe(clean());
+});
+
+//定义默认任务
+gulp.task(&apos;default&apos;,[&apos;js&apos;,&apos;img&apos;,&apos;browser-sync&apos;,&apos;css&apos;,&apos;sprites&apos;]);
+
+//监听src文件夹并执行默认任务
+gulp.watch(&apos;src&apos;, [&apos;default&apos;]);
+</code></pre></the>
       
     </div>
 
@@ -532,7 +628,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、打开命令行全局安装gulp"><span class="nav-number">1.</span> <span class="nav-text">1、打开命令行全局安装gulp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、在项目中安装gulp"><span class="nav-number">2.</span> <span class="nav-text">2、在项目中安装gulp</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、打开命令行全局安装gulp"><span class="nav-number">1.</span> <span class="nav-text">1、打开命令行全局安装gulp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、在项目中安装gulp"><span class="nav-number">2.</span> <span class="nav-text">2、在项目中安装gulp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、安装gulp插件"><span class="nav-number">3.</span> <span class="nav-text">3、安装gulp插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、编写gulpfile-js"><span class="nav-number">4.</span> <span class="nav-text">4、编写gulpfile.js</span></a></li></ol></div>
             
 
           </div>
