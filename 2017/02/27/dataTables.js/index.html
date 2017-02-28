@@ -93,7 +93,10 @@
 <meta property="og:image" content="http://ol3qapevr.bkt.clouddn.com/static/images/initialization.png">
 <meta property="og:image" content="http://ol3qapevr.bkt.clouddn.com/static/images/initialization_zh.png">
 <meta property="og:image" content="http://ol3qapevr.bkt.clouddn.com/static/images/data_arr.png">
-<meta property="og:updated_time" content="2017-02-27T10:01:44.596Z">
+<meta property="og:image" content="http://ol3qapevr.bkt.clouddn.com/static/images/data_obj.png">
+<meta property="og:image" content="http://ol3qapevr.bkt.clouddn.com/static/images/morenHide.png">
+<meta property="og:image" content="http://ol3qapevr.bkt.clouddn.com/static/images/morenHide.png">
+<meta property="og:updated_time" content="2017-02-28T03:50:07.618Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="dataTables表格插件入门">
 <meta name="twitter:description" content="Datatables是一款jquery表格插件。它是一个高度灵活的工具，可以将任何HTML表格添加高级的交互功能。">
@@ -355,6 +358,7 @@
 <the rest="" of="" comments="" |="" 余下全文="">
 
 <h3 id="dataTables-js基本用法"><a href="#dataTables-js基本用法" class="headerlink" title="dataTables.js基本用法"></a>dataTables.js基本用法</h3><p><strong> 1. 引入dataTables文件 </strong><br>进入dataTables中文官网<a href="http://dataTables.club" target="_blank" rel="external">http://dataTables.club</a>，点击<strong>最新版下载</strong>，下载最新版的dataTables文件，当然你也可以使用官网提供的CDN地址;下载完成后在页面引入dataTables的css、js文件，dataTablesjs依赖jQuery，必须先引入jQuery。</p>
+<p>本文我们以jquery.dataTables文件为例，如果需要Bootstrap、jqueryUI样式的表格，引入相应的文件就可以。</p>
 <p><strong>2. 初始化table</strong><br>编写基本的页面结构：</p>
 <pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;jquery.dataTables.min.css&quot;&gt;
 &lt;/head&gt;
@@ -376,7 +380,7 @@
 </code></pre><p>运行页面显示效果如下:</p>
 <img title="初始化页面" src="http://ol3qapevr.bkt.clouddn.com/static/images/initialization.png">
 <p><strong>3. 修改table配置</strong></p>
-<p>可以看出dataTables默认是英文状态,并且带有<strong>每页显示数据的条数</strong>、<strong>搜索框</strong>、<strong>数据记录</strong>、<strong>分页器</strong>,首先我们将英文转换成中文：</p>
+<p>可以看出dataTables默认是英文状态,并且带有<strong>每页显示数据的数量</strong>、<strong>搜索框</strong>、<strong>页脚信息</strong>、<strong>分页器</strong>,首先我们将英文转换成中文：</p>
 <pre><code>&lt;script&gt;
 $(&quot;.td&quot;).DataTable({
     //设置语言
@@ -402,7 +406,7 @@ $(&quot;.td&quot;).DataTable({
 <p>接下来我们填充一些数据模拟一下：</p>
 <pre><code>    $(function(){
     //模拟数据
-      var data = [
+      var shuju = [
           [
             &quot;小明&quot;,
             &quot;18&quot;,
@@ -447,7 +451,7 @@ $(&quot;.td&quot;).DataTable({
     ];
     $(&quot;.td&quot;).DataTable({
         //数据调取
-         &quot;data&quot;:data,
+         &quot;data&quot;:shuju,
         //设置语言
       &quot;oLanguage&quot;: {
         &quot;sLengthMenu&quot;: &quot;每页显示 _MENU_ 条记录&quot;,
@@ -468,9 +472,176 @@ $(&quot;.td&quot;).DataTable({
 })
 </code></pre><p></p>
 <p><strong>这里一定要记得将数据赋值给data属性</strong></p>
-<img title="初始化页面" src="http://ol3qapevr.bkt.clouddn.com/static/images/data_arr.png">
+<img title="数组数据" src="http://ol3qapevr.bkt.clouddn.com/static/images/data_arr.png">
 <p>除了用数组的方式定义数据，我们还可以使用对象的方式,当然会有一些差别：</p>
-</the>
+<pre><code>&lt;script&gt;
+$(function(){
+    //模拟数据
+      var shuju = [
+          {
+              &quot;name&quot;:&quot;小明&quot;,
+              &quot;age&quot;:&quot;18&quot;,
+              &quot;sex&quot;:&quot;男&quot;
+          },
+          {
+              &quot;name&quot;:&quot;小红&quot;,
+              &quot;age&quot;:&quot;17&quot;,
+              &quot;sex&quot;:&quot;女&quot;
+          },
+          { 
+             &quot;name&quot;:&quot;小青&quot;,
+             &quot;age&quot;:&quot;28&quot;,
+             &quot;sex&quot;:&quot;女&quot;
+          },
+          {
+              &quot;name&quot;:&quot;小白&quot;,
+            &quot;age&quot;:&quot;17&quot;,
+            &quot;sex&quot;:&quot;女&quot;,
+          },
+          {
+            &quot;name&quot;:&quot;小紫&quot;,
+            &quot;age&quot;:&quot;14&quot;,
+            &quot;sex&quot;:&quot;女&quot;,
+        },
+        {
+            &quot;name&quot;:&quot;小天&quot;,
+            &quot;age&quot;:&quot;21&quot;,
+            &quot;sex&quot;:&quot;男&quot;,
+        },
+        {
+            &quot;name&quot;:&quot;小绿&quot;,
+            &quot;age&quot;:&quot;17&quot;,
+            &quot;sex&quot;:&quot;男&quot;,
+        }    
+      ];
+
+    $(&quot;.td&quot;).DataTable({
+        //数据调取
+         &quot;data&quot;:shuju,
+          //使用对象数组，一定要配置columns，告诉 DataTables 每列对应的属性
+         &quot;columns&quot;: [
+            {data:&quot;name&quot;},
+            {data:&quot;age&quot;},
+            {data:&quot;sex&quot;},
+        ],
+      &quot;oLanguage&quot;: {
+        &quot;sLengthMenu&quot;: &quot;每页显示 _MENU_ 条记录&quot;,
+        &quot;sZeroRecords&quot;: &quot;抱歉， 没有找到&quot;,
+        &quot;sInfo&quot;: &quot;从 _START_ 到 _END_ /共 _TOTAL_ 条数据&quot;,
+        &quot;sInfoEmpty&quot;: &quot;没有数据&quot;,
+        &quot;sInfoFiltered&quot;: &quot;(从 _MAX_ 条数据中检索)&quot;,
+        &quot;sZeroRecords&quot;: &quot;没有检索到数据&quot;,
+        &quot;sSearch&quot;: &quot;名称:&quot;,
+        &quot;oPaginate&quot;: {
+          &quot;sFirst&quot;: &quot;首页&quot;,
+          &quot;sPrevious&quot;: &quot;前一页&quot;,
+          &quot;sNext&quot;: &quot;后一页&quot;,
+          &quot;sLast&quot;: &quot;尾页&quot;,
+        }
+      }
+    })
+})
+</code></pre><p></p>
+<p>页面效果和使用数组数据是一样的：</p>
+<img title="对象数据" src="http://ol3qapevr.bkt.clouddn.com/static/images/data_obj.png">
+<p>实际开发中数据肯定是从后台调取的，小白能力有限，后台那块涉及的不深，在这就不献丑了，接下来我们来修改dataTables的默认的几个选项，只要添加几个属性就可以：</p>
+<pre><code>    $(&quot;.td&quot;).DataTable({
+    //数据调取
+     &quot;data&quot;:shuju,
+     &quot;columns&quot;: [
+        {data:&quot;name&quot;},
+        {data:&quot;age&quot;},
+        {data:&quot;sex&quot;},
+    ],
+  &quot;oLanguage&quot;: {
+    &quot;sLengthMenu&quot;: &quot;每页显示 _MENU_ 条记录&quot;,
+    &quot;sZeroRecords&quot;: &quot;抱歉， 没有找到&quot;,
+    &quot;sInfo&quot;: &quot;从 _START_ 到 _END_ /共 _TOTAL_ 条数据&quot;,
+    &quot;sInfoEmpty&quot;: &quot;没有数据&quot;,
+    &quot;sInfoFiltered&quot;: &quot;(从 _MAX_ 条数据中检索)&quot;,
+    &quot;sZeroRecords&quot;: &quot;没有检索到数据&quot;,
+    &quot;sSearch&quot;: &quot;名称:&quot;,
+    &quot;oPaginate&quot;: {
+      &quot;sFirst&quot;: &quot;首页&quot;,
+      &quot;sPrevious&quot;: &quot;前一页&quot;,
+      &quot;sNext&quot;: &quot;后一页&quot;,
+      &quot;sLast&quot;: &quot;尾页&quot;,
+    }
+  },
+  //修改默认选项
+  paging: false,   //分页器关闭
+  searching: false,  //搜索关闭
+  LengthChange: false, //改变每页显示数据数量关闭
+  bInfo: false,//页脚信息
+})
+</code></pre><p>页面变为这样：</p>
+<img title="默认选项关闭" src="http://ol3qapevr.bkt.clouddn.com/static/images/morenHide.png">
+<p>如果你写的页面有好多个表格，并且每个的配置都是一样的，那我们可以使用<strong>$.fn.dataTable.defaults</strong>对象来处理：</p>
+<pre><code>// 默认禁用搜索和排序
+    $.extend($.fn.dataTable.defaults, {
+        paging: false,   //分页器关闭
+        searching: false,  //搜索关闭
+        LengthChange: false, //改变每页显示数据数量关闭
+        bInfo: false,//页脚信息
+    });
+
+    //dataTables初始化
+    $(&quot;.td&quot;).DataTable({
+        //数据调取
+         &quot;data&quot;:shuju,
+         &quot;columns&quot;: [
+            {data:&quot;name&quot;},
+            {data:&quot;age&quot;},
+            {data:&quot;sex&quot;},
+        ],
+      &quot;oLanguage&quot;: {
+        &quot;sLengthMenu&quot;: &quot;每页显示 _MENU_ 条记录&quot;,
+        &quot;sZeroRecords&quot;: &quot;抱歉， 没有找到&quot;,
+        &quot;sInfo&quot;: &quot;从 _START_ 到 _END_ /共 _TOTAL_ 条数据&quot;,
+        &quot;sInfoEmpty&quot;: &quot;没有数据&quot;,
+        &quot;sInfoFiltered&quot;: &quot;(从 _MAX_ 条数据中检索)&quot;,
+        &quot;sZeroRecords&quot;: &quot;没有检索到数据&quot;,
+        &quot;sSearch&quot;: &quot;名称:&quot;,
+        &quot;oPaginate&quot;: {
+          &quot;sFirst&quot;: &quot;首页&quot;,
+          &quot;sPrevious&quot;: &quot;前一页&quot;,
+          &quot;sNext&quot;: &quot;后一页&quot;,
+          &quot;sLast&quot;: &quot;尾页&quot;,
+        }
+      }
+    });
+</code></pre><p><strong>这里一定要注意</strong>$.fn.dataTable.defaults<strong>一定要放在dataTables初始化的前面</strong></p>
+<p>页面效果和单独设置是一样的：</p>
+<img title="默认选项关闭" src="http://ol3qapevr.bkt.clouddn.com/static/images/morenHide.png">
+<p>当然某一个表格需要某一个功能可以在此dataTables初始化中重新设置为打开</p>
+<p>默认选项中的<strong>每页显示数据数量</strong>默认是显示10、25、50、100,我们可以根据自己需求进行设置：</p>
+<pre><code>$(&quot;.td&quot;).DataTable({
+        //数据调取
+         &quot;data&quot;:shuju,
+         &quot;columns&quot;: [
+            {data:&quot;name&quot;},
+            {data:&quot;age&quot;},
+            {data:&quot;sex&quot;},
+        ],
+      &quot;oLanguage&quot;: {
+        &quot;sLengthMenu&quot;: &quot;每页显示 _MENU_ 条记录&quot;,
+        &quot;sZeroRecords&quot;: &quot;抱歉， 没有找到&quot;,
+        &quot;sInfo&quot;: &quot;从 _START_ 到 _END_ /共 _TOTAL_ 条数据&quot;,
+        &quot;sInfoEmpty&quot;: &quot;没有数据&quot;,
+        &quot;sInfoFiltered&quot;: &quot;(从 _MAX_ 条数据中检索)&quot;,
+        &quot;sZeroRecords&quot;: &quot;没有检索到数据&quot;,
+        &quot;sSearch&quot;: &quot;名称:&quot;,
+        &quot;oPaginate&quot;: {
+          &quot;sFirst&quot;: &quot;首页&quot;,
+          &quot;sPrevious&quot;: &quot;前一页&quot;,
+          &quot;sNext&quot;: &quot;后一页&quot;,
+          &quot;sLast&quot;: &quot;尾页&quot;,
+        }
+      },
+      //设置每页显示的数据数量
+      &quot;aLengthMenu&quot;: [[20, 40, 60, -1], [20, 40, 60, &quot;All&quot;]]
+    })
+</code></pre></the>
       
     </div>
 
