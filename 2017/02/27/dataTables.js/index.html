@@ -96,7 +96,8 @@
 <meta property="og:image" content="http://ol3qapevr.bkt.clouddn.com/static/images/data_obj.png">
 <meta property="og:image" content="http://ol3qapevr.bkt.clouddn.com/static/images/morenHide.png">
 <meta property="og:image" content="http://ol3qapevr.bkt.clouddn.com/static/images/morenHide.png">
-<meta property="og:updated_time" content="2017-02-28T03:50:07.618Z">
+<meta property="og:image" content="http://ol3qapevr.bkt.clouddn.com/static/images/addTable.png">
+<meta property="og:updated_time" content="2017-03-01T03:11:35.573Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="dataTables表格插件入门">
 <meta name="twitter:description" content="Datatables是一款jquery表格插件。它是一个高度灵活的工具，可以将任何HTML表格添加高级的交互功能。">
@@ -547,6 +548,7 @@ $(function(){
     })
 })
 </code></pre><p></p>
+<p>columns在dataTables里面是<strong>列</strong>的意思,里面包含几个data就是有几列,每列的数据是data的值决定的。</p>
 <p>页面效果和使用数组数据是一样的：</p>
 <img title="对象数据" src="http://ol3qapevr.bkt.clouddn.com/static/images/data_obj.png">
 <p>实际开发中数据肯定是从后台调取的，小白能力有限，后台那块涉及的不深，在这就不献丑了，接下来我们来修改dataTables的默认的几个选项，只要添加几个属性就可以：</p>
@@ -646,7 +648,51 @@ $(function(){
       //设置每页显示的数据数量
       &quot;aLengthMenu&quot;: [[20, 40, 60, -1], [20, 40, 60, &quot;All&quot;]]
     })
-</code></pre></the>
+</code></pre><p>如果想要自定义一列表格，我们可以这样：</p>
+<pre><code>&lt;table class=&quot;td&quot;&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;姓名&lt;/th&gt;
+            &lt;th&gt;年龄&lt;/th&gt;
+            &lt;th&gt;性别&lt;/th&gt;
+            &lt;th&gt;&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+&lt;/table&gt;
+</code></pre><p>在thead中添加一个th，然后</p>
+<pre><code>$(&quot;.td&quot;).DataTable({
+        //数据调取
+         &quot;data&quot;:shuju,
+         &quot;columns&quot;: [
+            {data:&quot;name&quot;},
+            {data:&quot;age&quot;},
+            {data:&quot;sex&quot;},
+            {
+                data:null,
+                &quot;width&quot;:&quot;1%&quot;,
+                &quot;orderable&quot;:false,//禁用排序
+                &quot;defaultContent&quot;: &quot;&lt;i&gt;还没有设置&lt;/i&gt;&quot;
+            }
+        ],
+      &quot;oLanguage&quot;: {
+        &quot;sLengthMenu&quot;: &quot;每页显示 _MENU_ 条记录&quot;,
+        &quot;sZeroRecords&quot;: &quot;抱歉， 没有找到&quot;,
+        &quot;sInfo&quot;: &quot;从 _START_ 到 _END_ /共 _TOTAL_ 条数据&quot;,
+        &quot;sInfoEmpty&quot;: &quot;没有数据&quot;,
+        &quot;sInfoFiltered&quot;: &quot;(从 _MAX_ 条数据中检索)&quot;,
+        &quot;sZeroRecords&quot;: &quot;没有检索到数据&quot;,
+        &quot;sSearch&quot;: &quot;名称:&quot;,
+        &quot;oPaginate&quot;: {
+          &quot;sFirst&quot;: &quot;首页&quot;,
+          &quot;sPrevious&quot;: &quot;前一页&quot;,
+          &quot;sNext&quot;: &quot;后一页&quot;,
+          &quot;sLast&quot;: &quot;尾页&quot;,
+        }
+      },
+      &quot;aLengthMenu&quot;: [[20, 40, 60, -1], [20, 40, 60, &quot;All&quot;]]
+</code></pre><p>在columns属性中添加一个data,放上你想要放的内容,width是此表格的宽度,orderable是排序设置,defaultContent是要放置的内容。</p>
+<img title="添加一行数据" src="http://ol3qapevr.bkt.clouddn.com/static/images/addTable.png">
+</the>
       
     </div>
 
