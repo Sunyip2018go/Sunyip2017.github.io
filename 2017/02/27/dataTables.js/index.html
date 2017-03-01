@@ -97,7 +97,7 @@
 <meta property="og:image" content="http://ol3qapevr.bkt.clouddn.com/static/images/morenHide.png">
 <meta property="og:image" content="http://ol3qapevr.bkt.clouddn.com/static/images/morenHide.png">
 <meta property="og:image" content="http://ol3qapevr.bkt.clouddn.com/static/images/addTable.png">
-<meta property="og:updated_time" content="2017-03-01T03:15:29.921Z">
+<meta property="og:updated_time" content="2017-03-01T06:18:50.875Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="dataTables表格插件入门">
 <meta name="twitter:description" content="Datatables是一款jquery表格插件。它是一个高度灵活的工具，可以将任何HTML表格添加高级的交互功能。">
@@ -692,7 +692,35 @@ $(function(){
       &quot;aLengthMenu&quot;: [[20, 40, 60, -1], [20, 40, 60, &quot;All&quot;]]
 </code></pre><p>在columns属性中添加一个data,放上你想要放的内容,width是此表格的宽度,orderable是排序设置,defaultContent是要放置的内容。</p>
 <img title="添加一行数据" src="http://ol3qapevr.bkt.clouddn.com/static/images/addTable.png">
-<p>写到这，我发现这个表格的样式简直无法直视，什么鬼啊，所以我决定引入Bootstrap样式</p>
+<p>写到这，我发现这个表格的样式简直无法直视，什么鬼啊，所以我决定引入Bootstrap样式。</p>
+<p>如果你想修改各个控件的位置，可以使用dom属性：</p>
+<pre><code>$(&quot;.td&quot;).DataTable({
+        //数据调取
+         &quot;data&quot;:shuju,
+         //dom属性控制各控件位置
+          &quot;dom&quot;: &apos;&lt;&quot;top&quot;i&gt;rt&lt;&quot;bottom&quot;flp&gt;&lt;&quot;clear&quot;&gt;&apos;,
+         &quot;columns&quot;: [
+            {data:&quot;name&quot;},
+            {data:&quot;age&quot;},
+            {data:&quot;sex&quot;},
+            {
+                data:null,
+                &quot;width&quot;:&quot;1%&quot;,
+                &quot;orderable&quot;:false,//禁用排序
+                &quot;defaultContent&quot;: &quot;还没有设置&quot;
+            }
+        ],
+</code></pre><ol>
+<li><code>l</code> 代表 length，左上角的改变每页显示条数控件</li>
+<li><code>f</code> 代表 filtering，右上角的过滤搜索框控件</li>
+<li><code>t</code> 代表 table，表格本身</li>
+<li><code>i</code> 代表 info，左下角的表格信息显示控件</li>
+<li><code>p</code> 代表 pagination，右下角的分页控件</li>
+<li><code>r</code> 代表 processing，表格中间的数据加载等待提示框控件</li>
+<li><code>B</code> 代表 button，Datatables可以提供的按钮控件，默认显示在左上角</li>
+<li><code>&lt; &gt;</code>代表一个div元素</li>
+<li><code>&lt;&quot;#id&quot; &gt;</code> 指定了id的div元素<br>10.<code>&lt;&quot;class&quot; &gt;</code>指定了样式名的div元素<br>11.<code>&lt;&quot;#id.class&quot; &gt;</code>指定了id和样式的div元素</li>
+</ol>
 </the>
       
     </div>
