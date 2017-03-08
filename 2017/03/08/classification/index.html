@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="sass," />
+  <meta name="keywords" content="Hexo," />
 
 
 
@@ -84,20 +84,16 @@
 
 
 
-<meta name="description" content="成熟、稳定、强大的 CSS 扩展语言解析器">
+<meta name="description" content="我用的Hexo主题next默认是没有分类页面的…">
 <meta property="og:type" content="article">
-<meta property="og:title" content="sass入门">
-<meta property="og:url" content="http://www.sunyip.top/2017/02/28/sass/index.html">
+<meta property="og:title" content="为Hexo编写分类页面">
+<meta property="og:url" content="http://www.sunyip.top/2017/03/08/classification/index.html">
 <meta property="og:site_name" content="Sunyip的漫漫前端路">
-<meta property="og:description" content="成熟、稳定、强大的 CSS 扩展语言解析器">
-<meta property="og:image" content="http://ol3qapevr.bkt.clouddn.com/static/images/ruby_az.png">
-<meta property="og:image" content="http://ol3qapevr.bkt.clouddn.com/static/images/ruby_azh.png">
-<meta property="og:image" content="http://ol3qapevr.bkt.clouddn.com/static/images/sass_az.png">
-<meta property="og:updated_time" content="2017-03-01T01:42:37.725Z">
+<meta property="og:description" content="我用的Hexo主题next默认是没有分类页面的…">
+<meta property="og:updated_time" content="2017-03-08T09:05:00.327Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="sass入门">
-<meta name="twitter:description" content="成熟、稳定、强大的 CSS 扩展语言解析器">
-<meta name="twitter:image" content="http://ol3qapevr.bkt.clouddn.com/static/images/ruby_az.png">
+<meta name="twitter:title" content="为Hexo编写分类页面">
+<meta name="twitter:description" content="我用的Hexo主题next默认是没有分类页面的…">
 
 
 
@@ -125,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://www.sunyip.top/2017/02/28/sass/"/>
+  <link rel="canonical" href="http://www.sunyip.top/2017/03/08/classification/"/>
 
 
 
 
 
-  <title> sass入门 | Sunyip的漫漫前端路 </title>
+  <title> 为Hexo编写分类页面 | Sunyip的漫漫前端路 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -254,7 +250,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://www.sunyip.top/2017/02/28/sass/">
+  <link itemprop="mainEntityOfPage" href="http://www.sunyip.top/2017/03/08/classification/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Sunyip">
@@ -278,7 +274,7 @@
             
             
               
-                sass入门
+                为Hexo编写分类页面
               
             
           </h1>
@@ -293,8 +289,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-28T16:36:13+08:00">
-                2017-02-28
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-08T16:52:46+08:00">
+                2017-03-08
               </time>
             
 
@@ -316,8 +312,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/sass/" itemprop="url" rel="index">
-                    <span itemprop="name">sass</span>
+                  <a href="/categories/Hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">Hexo</span>
                   </a>
                 </span>
 
@@ -356,20 +352,29 @@
       
 
       
-        <p>成熟、稳定、强大的 CSS 扩展语言解析器<br><a id="more"></a></p>
+        <p>我用的Hexo主题next默认是没有分类页面的…<br><a id="more"></a></p>
 <the rest="" of="" comments="" |="" 余下全文="">
 
-<h3 id="1、sass安装"><a href="#1、sass安装" class="headerlink" title="1、sass安装"></a>1、sass安装</h3><p> sass依赖ruby，所以先安装ruby，以window为例，进入下载页面<a href="https://rubyinstaller.org/" target="_blank" rel="external">https://rubyinstaller.org/</a>,下载BubyInstaller,安装的时候记得将Ruby安装在系统的环境变量中：</p>
- <img title="ruby安装" src="http://ol3qapevr.bkt.clouddn.com/static/images/ruby_az.png">
-<p> 安装完成后：</p>
- <img title="运行ruby" src="http://ol3qapevr.bkt.clouddn.com/static/images/ruby_azh.png">
-<p> 在启动的Ruby命令控制面板中输入下面的命令：<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gem -v 查看Ruby版本</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gem install sass  安装sass</div></pre></td></tr></table></figure>
-<img title="sass安装" src="http://ol3qapevr.bkt.clouddn.com/static/images/sass_az.png">
-<p>检测sass是否安装成功，输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sass -v</div></pre></td></tr></table></figure></p>
-<p>检测sass是否有更新,输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gem update sass</div></pre></td></tr></table></figure></p>
-<p>卸载sass,运行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gem uninstall sass</div></pre></td></tr></table></figure></p>
-</the>
+<p><strong>1.创建分类页面</strong></p>
+<p>打开 <strong>git Bash</strong>,编写Hexo博客必须使用它,进入博客根目录,运行</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new page categories</div></pre></td></tr></table></figure>
+<p> 会在<strong>source</strong>目录下生成<strong>categories</strong>文件夹,打开里面的<strong>index.md</strong>文件,</p>
+<pre><code> ---
+title: 分类
+date: 2017-03-08 16:37:45
+type: &quot;categories&quot;
+ ---
+</code></pre><p>只要添加<strong>type: “categories”</strong>就可以</p>
+<p>这里得说一下,要使用分类选项必须编辑主题的<strong>_config.yml</strong>文件,将 menu 中的 categories: /categories 注释去掉，如下:</p>
+<pre><code>menu:
+  home: /
+  categories: /categories
+  #about: /about
+  archives: /archives
+  tags: /tags
+  #sitemap: /sitemap.xml
+  #commonweal: /404.html
+</code></pre></the>
       
     </div>
 
@@ -392,7 +397,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/sass/" rel="tag"># sass</a>
+            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
           
         </div>
       
@@ -401,8 +406,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/02/28/gulp/" rel="next" title="gulp入门">
-                <i class="fa fa-chevron-left"></i> gulp入门
+              <a href="/2017/03/08/brackets/" rel="next" title="brackets编辑器安装emment">
+                <i class="fa fa-chevron-left"></i> brackets编辑器安装emment
               </a>
             
           </div>
@@ -410,10 +415,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/08/brackets/" rel="prev" title="brackets编辑器安装emment">
-                brackets编辑器安装emment <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -460,17 +461,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpg"
@@ -526,22 +518,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、sass安装"><span class="nav-number">1.</span> <span class="nav-text">1、sass安装</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
     </div>
