@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo," />
+  <meta name="keywords" content="pjax," />
 
 
 
@@ -84,16 +84,18 @@
 
 
 
-<meta name="description" content="为Hexo添加多说评论，方便交流。">
+<meta name="description" content="pushState + ajax = pjax,无刷新页面更改页面内容。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo添加多说评论">
-<meta property="og:url" content="http://www.sunyip.top/2017/03/13/duoshuo/index.html">
+<meta property="og:title" content="pjax入门">
+<meta property="og:url" content="http://www.sunyip.top/2017/03/16/pjax/index.html">
 <meta property="og:site_name" content="Sunyip的漫漫前端路">
-<meta property="og:description" content="为Hexo添加多说评论，方便交流。">
-<meta property="og:updated_time" content="2017-03-13T06:46:18.236Z">
+<meta property="og:description" content="pushState + ajax = pjax,无刷新页面更改页面内容。">
+<meta property="og:image" content="http://ol3qapevr.bkt.clouddn.com/static/images/pjax.gif">
+<meta property="og:updated_time" content="2017-03-16T06:28:59.497Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo添加多说评论">
-<meta name="twitter:description" content="为Hexo添加多说评论，方便交流。">
+<meta name="twitter:title" content="pjax入门">
+<meta name="twitter:description" content="pushState + ajax = pjax,无刷新页面更改页面内容。">
+<meta name="twitter:image" content="http://ol3qapevr.bkt.clouddn.com/static/images/pjax.gif">
 
 
 
@@ -121,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://www.sunyip.top/2017/03/13/duoshuo/"/>
+  <link rel="canonical" href="http://www.sunyip.top/2017/03/16/pjax/"/>
 
 
 
 
 
-  <title> Hexo添加多说评论 | Sunyip的漫漫前端路 </title>
+  <title> pjax入门 | Sunyip的漫漫前端路 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -250,7 +252,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://www.sunyip.top/2017/03/13/duoshuo/">
+  <link itemprop="mainEntityOfPage" href="http://www.sunyip.top/2017/03/16/pjax/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Sunyip">
@@ -274,7 +276,7 @@
             
             
               
-                Hexo添加多说评论
+                pjax入门
               
             
           </h1>
@@ -289,8 +291,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-13T13:17:09+08:00">
-                2017-03-13
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-16T10:46:41+08:00">
+                2017-03-16
               </time>
             
 
@@ -312,8 +314,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo</span>
+                  <a href="/categories/pjax/" itemprop="url" rel="index">
+                    <span itemprop="name">pjax</span>
                   </a>
                 </span>
 
@@ -330,8 +332,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/03/13/duoshuo/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/13/duoshuo/" itemprop="commentCount"></span>
+                <a href="/2017/03/16/pjax/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/16/pjax/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -362,37 +364,65 @@
       
 
       
-        <p>为Hexo添加多说评论，方便交流。<br><a id="more"></a></p>
+        <p>pushState + ajax = pjax,无刷新页面更改页面内容。<br><a id="more"></a></p>
 <the rest="" of="" comments="" |="" 余下全文="">
 
-
-<p><strong> 1. 注册多说 </strong></p>
-<p>登录此站点<a href="http://duoshuo.com/create-site/" target="_blank" rel="external">http://duoshuo.com/create-site/</a>,通过第三方登录,<strong>创建站点</strong>,特别强调一下,在填写<strong>多说域名</strong>时一定记住填写的内容。</p>
-<p><strong> 2. 修改配置 </strong></p>
-<p>在_config.yml中添加多说的配置：</p>
-<pre><code>duoshuo_shortname: 你站点的short_name
-</code></pre><p>然后修改主题themes\landscape\layout_partial\article.ejs,将里面的内容替换成：</p>
-<pre><code> &lt;% if (!index &amp;&amp; post.comments &amp;&amp; config.duoshuo_shortname){ %&gt;
-      &lt;section id=&quot;comments&quot;&gt;
-        &lt;!-- 多说评论框 start --&gt;
-        &lt;div class=&quot;ds-thread&quot; data-thread-key=&quot;&lt;%= post.layout %&gt;-&lt;%= post.slug %&gt;&quot; data-title=&quot;&lt;%= post.title %&gt;&quot; data-url=&quot;&lt;%= page.permalink %&gt;&quot;&gt;&lt;/div&gt;
-        &lt;!-- 多说评论框 end --&gt;
-        &lt;!-- 多说公共JS代码 start (一个网页只需插入一次) --&gt;
-        &lt;script type=&quot;text/javascript&quot;&gt;
-        var duoshuoQuery = {short_name:&apos;&lt;%= config.duoshuo_shortname %&gt;&apos;};
-          (function() {
-            var ds = document.createElement(&apos;script&apos;);
-            ds.type = &apos;text/javascript&apos;;ds.async = true;
-            ds.src = (document.location.protocol == &apos;https:&apos; ? &apos;https:&apos; : &apos;http:&apos;) + &apos;//static.duoshuo.com/embed.js&apos;;
-            ds.charset = &apos;UTF-8&apos;;
-            (document.getElementsByTagName(&apos;head&apos;)[0] 
-             || document.getElementsByTagName(&apos;body&apos;)[0]).appendChild(ds);
-          })();
-          &lt;/script&gt;
-        &lt;!-- 多说公共JS代码 end --&gt;
-      &lt;/section&gt;
-&lt;% } %&gt;
-</code></pre></the>
+<p>Pjax的实现原理就是通过点击链接，利用ajax来更新页面需要改变的内容,然后使用HTML5的pushState修改浏览器的URL地址，这样就避免了整个页面的加载，用户体验性好,并且ajax向后台请求的是HTML片段,不是JSON数据。</p>
+<p>接下来通过实例来体验一下：</p>
+<p>首先下载pjax文件,这里有个坑，关于pjax网上的教程真的非常多,有两个版本的pjax,用法有点区别,很容易就弄乱了，这里我推荐这个<a href="https://github.com/welefen/pjax" target="_blank" rel="external">https://github.com/welefen/pjax</a>,是国人对pjax的升级版本。</p>
+<p>首先我们创建一个HTMl文件，引入pjax文件，pjax文件依赖jQuery，记得先引入jQuery。</p>
+<pre><code>&lt;div id=&quot;box&quot;&gt;
+       &lt;header&gt;这是头部&lt;/header&gt;
+        &lt;ul&gt;
+             &lt;li&gt;&lt;a href=&quot;a1.html&quot; title=&quot;index&quot;&gt;首页&lt;/a&gt;&lt;/li&gt;
+             &lt;li&gt;&lt;a href=&quot;a2.html&quot; title=&quot;charts&quot;&gt;图表&lt;/a&gt;&lt;/li&gt;
+             &lt;li&gt;&lt;a href=&quot;a3.html&quot; title=&quot;table&quot;&gt;表格&lt;/a&gt;&lt;/li&gt;
+             &lt;li&gt;&lt;a href=&quot;a4.html&quot; title=&quot;wenzhang&quot;&gt;文章&lt;/a&gt;&lt;/li&gt;
+         &lt;/ul&gt;
+        &lt;div id=&quot;pjax-container&quot;&gt;
+            这是首页
+        &lt;/div&gt;
+&lt;/div&gt;
+&lt;script src=&quot;http://cdn.bootcss.com/jquery/2.0.0/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;jquery.pjax.js&quot;&gt;&lt;/script&gt;
+</code></pre><p>在这里我们定义一个id为pjax-container的div作为我们的容器,点击链接后更改的内容就在这个里面显示.<br>接下来我们编写js部分:</p>
+<pre><code>&lt;script&gt;
+       $(function(){  
+            $.pjax({
+                selector: &apos;a&apos;,//绑定pjax的标签
+                container: &apos;#pjax-container&apos;, //内容替换的容器
+                timeout:8000,//超过8秒正常加载
+                show: &apos;fade&apos;,  //展现的动画，支持默认和fade, 可以自定义动画方式，这里为自定义的function即可。
+                cache: false,  //是否使用缓存
+                storage: true,  //是否使用本地存储
+                titleSuffix: &apos;/&apos;, //标题后缀
+                filter: function(){},
+                callback: function(){}
+            }) 
+       })
+&lt;/script&gt;
+</code></pre><p>接下来我们编写其余的HTML文件，这些跳转的HTML文件只需要写要展示的内容,不需要写html、head、body等标签,举个例子,a2.html里面的内容是：</p>
+<pre><code>&lt;div&gt;这是图表页&lt;/div&gt;
+</code></pre><p> 接下来我们运行一下：</p>
+<img title="pjax" src="http://ol3qapevr.bkt.clouddn.com/static/images/pjax.gif">
+<p>当我们点击a标签的时候，页面并没有刷新，右侧中间的内容也替换了，这就是我们想要的。<br>这里啰嗦一下，说一个小技巧:</p>
+<pre><code>&lt;style&gt;
+    *{margin:0;padding:0;}
+    html,body{width: 100%;height: 100%;}
+    /*父容器*/
+    #box{overflow: hidden;width: 100%;height: 100%;}
+    /*头部*/
+    header{font-size:10px;height:80px;text-align:center;line-height:8;background:#ccc;}
+    /*右侧高度设置*/
+    #pjax-container{min-height:calc(100% - 50px); height: auto !important;}
+    /*左侧*/
+    ul{margin-bottom:-1000px;padding-bottom:1000px;list-style: none;float:left;background:#ccc}
+    li{padding:30px 30px}
+    /*右侧*/
+    #pjax-container{text-align:center;margin-left:100px;margin-bottom:-1000px;padding-bottom:1000px;height:140px;line-height: 10}
+&lt;/style&gt;
+</code></pre><p>左侧和右侧都设置了padding-bottom和margin-bottom，两者一正一负相互抵消，父级设置了overflow：hidden，然后设置右侧的高度,然后左侧的高度就和右边保持一致了，这种方式应用于多栏布局很好用。</p>
+</the>
       
     </div>
 
@@ -415,7 +445,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+            <a href="/tags/pjax/" rel="tag"># pjax</a>
           
         </div>
       
@@ -424,8 +454,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/08/classification/" rel="next" title="为Hexo编写分类页面">
-                <i class="fa fa-chevron-left"></i> 为Hexo编写分类页面
+              <a href="/2017/03/13/duoshuo/" rel="next" title="Hexo添加多说评论">
+                <i class="fa fa-chevron-left"></i> Hexo添加多说评论
               </a>
             
           </div>
@@ -433,10 +463,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/16/pjax/" rel="prev" title="pjax入门">
-                pjax入门 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -462,8 +488,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/03/13/duoshuo/"
-           data-title="Hexo添加多说评论" data-url="http://www.sunyip.top/2017/03/13/duoshuo/">
+      <div class="ds-thread" data-thread-key="2017/03/16/pjax/"
+           data-title="pjax入门" data-url="http://www.sunyip.top/2017/03/16/pjax/">
       </div>
     
   </div>
