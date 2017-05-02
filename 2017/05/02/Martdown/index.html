@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Martdown," />
 
 
 
@@ -84,19 +84,16 @@
 
 
 
-<meta name="description" content="gulp作为前端自动化工具，可以大大简化我们的工作流程">
+<meta name="description" content="编写Hexo博客的语法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="gulp入门">
-<meta property="og:url" content="http://www.sunyip.top/2017/02/28/gulp/index.html">
+<meta property="og:title" content="Martdown语法简介">
+<meta property="og:url" content="http://www.sunyip.top/2017/05/02/Martdown/index.html">
 <meta property="og:site_name" content="Sunyip的漫漫前端路">
-<meta property="og:description" content="gulp作为前端自动化工具，可以大大简化我们的工作流程">
-<meta property="og:image" content="http://ol3qapevr.bkt.clouddn.com/static/images/packageJson.png">
-<meta property="og:image" content="http://ol3qapevr.bkt.clouddn.com/static/images/package_y.png">
-<meta property="og:updated_time" content="2017-04-01T10:04:28.561Z">
+<meta property="og:description" content="编写Hexo博客的语法">
+<meta property="og:updated_time" content="2017-05-02T05:38:42.937Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="gulp入门">
-<meta name="twitter:description" content="gulp作为前端自动化工具，可以大大简化我们的工作流程">
-<meta name="twitter:image" content="http://ol3qapevr.bkt.clouddn.com/static/images/packageJson.png">
+<meta name="twitter:title" content="Martdown语法简介">
+<meta name="twitter:description" content="编写Hexo博客的语法">
 
 
 
@@ -124,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://www.sunyip.top/2017/02/28/gulp/"/>
+  <link rel="canonical" href="http://www.sunyip.top/2017/05/02/Martdown/"/>
 
 
 
 
 
-  <title> gulp入门 | Sunyip的漫漫前端路 </title>
+  <title> Martdown语法简介 | Sunyip的漫漫前端路 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -263,7 +260,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://www.sunyip.top/2017/02/28/gulp/">
+  <link itemprop="mainEntityOfPage" href="http://www.sunyip.top/2017/05/02/Martdown/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Sunyip">
@@ -287,7 +284,7 @@
             
             
               
-                gulp入门
+                Martdown语法简介
               
             
           </h1>
@@ -302,8 +299,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-28T14:25:19+08:00">
-                2017-02-28
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-02T11:21:53+08:00">
+                2017-05-02
               </time>
             
 
@@ -325,8 +322,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/gulp/" itemprop="url" rel="index">
-                    <span itemprop="name">gulp</span>
+                  <a href="/categories/Martdown/" itemprop="url" rel="index">
+                    <span itemprop="name">Martdown</span>
                   </a>
                 </span>
 
@@ -343,8 +340,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/02/28/gulp/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/28/gulp/" itemprop="commentCount"></span>
+                <a href="/2017/05/02/Martdown/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/05/02/Martdown/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -375,129 +372,33 @@
       
 
       
-        <p>gulp作为前端自动化工具，可以大大简化我们的工作流程<br><a id="more"></a></p>
-<the rest="" of="" comments="" |="" 余下全文="">
-
-<p>注意：使用gulp需要安装nodejs</p>
-<h3 id="1、打开命令行全局安装gulp"><a href="#1、打开命令行全局安装gulp" class="headerlink" title="1、打开命令行全局安装gulp"></a>1、打开命令行全局安装gulp</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install gulp -g</div></pre></td></tr></table></figure>
-<p><strong>-g</strong>是指全局安装</p>
-<p>如果下载速度太慢的话，可以考虑安装淘宝npm镜像：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g cnpm --registry=https://registry.npm.taobao.org</div></pre></td></tr></table></figure>
-<p>将此代码复制到命令行执行，使用时只要将npm换成cnpm就可以了。<br>安装完成后，命令行输入 <strong>gulp -v</strong>，如果出现gulp的版本号说明安装成功。</p>
-<h3 id="2、在项目中安装gulp"><a href="#2、在项目中安装gulp" class="headerlink" title="2、在项目中安装gulp"></a>2、在项目中安装gulp</h3><p>在命令行新建项目目录，执行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mkdir my_gulp_projrct</div></pre></td></tr></table></figure>
-<p><strong>mkdir</strong>在命令行中是新建文件夹的意思</p>
-<p>进入项目目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ cd my_gulp_project</div></pre></td></tr></table></figure></p>
-<p>生成package.json<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm init</div></pre></td></tr></table></figure></p>
-<p>name：填写你的项目名称，<br>version：填写你的项目的版本号，<br>description：填写你的项目描述，<br>entry point：入口文件，因为进行这一步的时候我们还没有创建gulpfile.js,所以默认的是index.js，我们可以自行填写gulpfile.js (gulpfile.js非常重要，gulpfile.js里面的内容就是告诉gulp我们要进行什么操作)，<br>test command：留空回车，<br>git repository：留空回车，<br>keywords：填写你的项目关键字，<br>author：可以填写你的名字，<br>license：默认回车，<br>出现Is this OK？<yes>回车就可以，然后就在我们的项目目录下创建了package.json文件；<br><img title="package.json" src="http://ol3qapevr.bkt.clouddn.com/static/images/packageJson.png"></yes></p>
-<p>你还可以执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm init -y</div></pre></td></tr></table></figure></p>
-<p>这样会快速生成package.json文件，当然里面的内容也会为空，像这样：</p>
-<img title="快速生成package.json" src="http://ol3qapevr.bkt.clouddn.com/static/images/package_y.png">
-<p>在项目中安装gulp<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install gulp --save-dev</div></pre></td></tr></table></figure></p>
-<p>–save：自动把模块和版本号添加到package.json中的dependencies部分<br>–save-dev： 自动把模块和版本号添加到package.json中的devdependencies部分<br>通俗点讲 –save-dev 是你开发时候依赖的东西，–save 是你发布之后还依赖的东西。<br>这里说一个小技巧，<strong>–save-dev</strong>可以简写成<strong>-D</strong><br>执行完这一步会在项目目录中生成node_modules文件夹，gulp安装在node_modules文件夹内，打开package.json会看到gulp的版本号在里面，以后我们安装的gulp的各种插件也会出现在里面；</p>
-<h3 id="3、安装gulp插件"><a href="#3、安装gulp插件" class="headerlink" title="3、安装gulp插件"></a>3、安装gulp插件</h3><pre><code>npm install 
-    gulp-imagemin(图片压缩)  
-    gulp-uglify(压缩javascript) 
-    gulp-concat(合并javascript) 
-    gulp-clean-css(压缩css)  
-    browser-sync(页面实时开发) 
-    gulp-postcss(css处理) 
-    gulp-jshint(检测javacript语法) 
-    gulp-rename(重命名)
-    gulp-cache(只压缩修改的图片，已经压缩的不再压缩，节省时间)
-    gulp-pngquant(深度压缩图片)
-    gulp-clean(项目完成后清除多余的文件夹)
-    gulp.spritesmith(雪碧图)
---save-dev
-</code></pre><h3 id="4、编写gulpfile-js"><a href="#4、编写gulpfile-js" class="headerlink" title="4、编写gulpfile.js"></a>4、编写gulpfile.js</h3><pre><code>//导入工具包 require(&apos;node_modules里对应模块&apos;)
-var gulp          = require(&apos;gulp&apos;),
-    imageMin =  require(&quot;gulp-imagemin&quot;),
-    uglify         =  require(&apos;gulp-uglify&apos;),
-    concat       =  require(&apos;gulp-concat&apos;),
-    minifyCss   =  require(&apos;gulp-clean-css&apos;),
-    browserSync  = require(&apos;brower-sync&apos;),
-    jshint          =  require(&apos;gulp-jshint&apos;)，
-    cache           = require(&apos;gulp-cache&apos;),
-    pngquant    = require(&apos;gulp-pngquant&apos;);
-    postcss          = require(&apos;gulp-postcss&apos;),
-    spritesmith     = require(&apos;gulp.spritesmith&apos;),
-    clean          =   require(&apos;gulp-clean&apos;);
-
-//操作javascript
-gulp.task(&apos;js&apos;,function(){
-    gulp.src(&apos;src/js/*.js&apos;)
-        .pipe(jshint()).    //检测
-        pipe(concat(&apos;all.js&apos;)).     //合并
-        pipe(uglify({         //压缩
-                mangle: true, //类型：Boolean 默认：true 是否修改变量名
-                compress: true, //类型：Boolean 默认：true 是否完全压缩
-                preserveComments: &apos;all&apos;  //保留所有注释
-        })).     
-    gulp.src([&apos;src/js/index.js&apos;,&apos;src/js/detail.js&apos;]) //多个文件以数组形式传入
-    //除了test1.js和test2.js（**匹配src/js的0个或多个子文件夹）
-    gulp.src([&apos;src/js/*.js&apos;, &apos;!src/js/**/{test1,test2}.js&apos;]) 
-        pipe(gulp.dest(&apos;dist/js&apos;));
-});
-
-//操作图片
-gulp.task(&apos;img&apos;,function(){
-    gulp.src(&apos;src/img/*.{png,jpg,gif,ico}&apos;)
-        .pipe(cache(imageMin({
-            progressive:true,
-            svgoPlugins:[{removeViewBox:false}], //不要移除svg的viewbox属性
-            use:[pngquant()]   //使用pngquant深度压缩png图片的imagemin插件
-        })))
-        .pipe(gulp.dest(&apos;dist/img&apos;))
-});
-
-//实时开发
-gulp.task(&apos;browser-sync&apos;,function(){
-    browserSync({
-        files:&apos;**&apos;,
-        server:{
-            baseDir:&apos;./&apos;
-        }
-    });    
-});
-
-//操作小图片形成雪碧图
-gulp.task(&apos;sprites&apos;,function(){
-    gulp.src(&apos;spritesImg/*.png&apos;)
-        .pipe(spritesmith({
-            imgName:&apos;sprite.png&apos;,   //保存合并后图片的地址
-            cssName：&apos;dist/spritesCss/sprites.css&apos;,   //保存合并后css的地址
-            padding:5,  //合并时图片之间的距离
-            algorithm:&apos;binary-tree&apos;,   //注释1
-            cssTemplate:&apos;css/handlebarsStr.css&apos;  //注释2
-        }))
-        .pipe(gulp.dest(&apos;dist/spritesImg&apos;))
-})
-
-//操作css
-gulp.task(&apos;css&apos;,function(){     
-    var processors = [];
-    gulp.src(&apos;./src/*.css&apos;)      
-        .pipe(postcss(processors))
-        .pipe(gulp.dest(&apos;./dist/css&apos;));     
-    });
-
-gulp.task(&apos;clean&apos;, function () {
-    return gulp.src(&apos;src&apos;, {read: false})
-                .pipe(clean());
-});
-
-//定义默认任务
-gulp.task(&apos;default&apos;,[&apos;js&apos;,&apos;img&apos;,&apos;browser-sync&apos;,&apos;css&apos;,&apos;sprites&apos;]);
-
-//监听src文件夹并执行默认任务
-gulp.watch(&apos;src&apos;, [&apos;default&apos;]);
-</code></pre><h2 id="gulp核心API"><a href="#gulp核心API" class="headerlink" title="gulp核心API"></a>gulp核心API</h2><ul>
-<li>gulp.src：获取文件</li>
-<li>gulp.dest：写入文件</li>
-<li>gulp.tasks：注册任务</li>
-<li>gulp.watch：监控文件的改动</li>
+        <p>编写Hexo博客的语法<br><a id="more"></a></p>
+<p><the rest="" of="" comments="" |="" 余下全文=""></the></p>
+<h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><p>Martdown支持两种标题类型:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">类型1</div><div class="line">一级标题</div><div class="line">==========</div><div class="line">二级标题</div><div class="line">----------</div><div class="line"></div><div class="line">类型2</div><div class="line">一级标题</div><div class="line">#</div><div class="line">二级标题</div><div class="line">##</div><div class="line">三级标题</div><div class="line">###</div><div class="line">.</div><div class="line">.</div><div class="line">.</div><div class="line">六级标题</div><div class="line">######</div></pre></td></tr></table></figure></p>
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><p>支持两种方式的引用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">方式1</div><div class="line">&gt;这是一句话</div><div class="line">&gt;这是另一句话</div><div class="line"></div><div class="line">方式2</div><div class="line">&gt;这是一句话</div><div class="line">这是另一句话</div></pre></td></tr></table></figure></p>
+<p>同时Martdown也支持不同数量的&gt;嵌套使用:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;这是外层的引用</div><div class="line">&gt;&gt;这是内层的引用</div></pre></td></tr></table></figure></p>
+<h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><p>使用<code>+</code>、<code>-</code>、<code>*</code>来作为标记：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">+ 这是第一项</div><div class="line">+ 这是第二项</div></pre></td></tr></table></figure>
+<p><code>+</code>与文字之间至少要有一个空格；</p>
+<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><p>有序列表使用数字和紧挨着的点号表示:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1. 这是列表1</div><div class="line">2. 这是列表2</div></pre></td></tr></table></figure>
+<p>同无序列表一样，数字与文字之间也需要至少有一个文字间隔；</p>
+<h4 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h4><ul>
+<li>1.在列表中加入<code>1.</code>需写成<code>1\.</code></li>
 </ul>
-</the>
+<h3 id="代码区块"><a href="#代码区块" class="headerlink" title="代码区块"></a>代码区块</h3><p>缩进4个空格，一行代码区块会一直持续到没有缩进的地方；<br>也可以使用<code>` </code>来包裹代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">```</div><div class="line">code</div><div class="line">```</div></pre></td></tr></table></figure>
+<h3 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h3><p>markdown中有三种方式实现超链接。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">方式1</div><div class="line">[百度](http://www.baidu.com)</div><div class="line">方式二</div><div class="line">[百度][Baidu-url]</div><div class="line">[Baidu-url]:http://www.baidu.com</div></pre></td></tr></table></figure></p>
+<p>也可以为链接的文字加上提示文字,相当于title，只要在括号中超链接加上空格后添加提示内容即可。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[百度](http://www.baidu.com &apos;这是提示文字&apos;)</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[百度][Baidu-url]</div><div class="line">[Baidu-url]:http://www.baidu.com &apos;这是提示文字&apos;</div></pre></td></tr></table></figure>
+<p>第三种方式使用<code>&lt;&gt;</code>来包裹URL:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">方式三</div><div class="line">&lt;http://www.baidu.com</div></pre></td></tr></table></figure></p>
+<h3 id="加粗和斜体"><a href="#加粗和斜体" class="headerlink" title="加粗和斜体"></a>加粗和斜体</h3><p>Markdown使用<code>*</code>和<code>_</code>来表示粗体和斜体<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">加粗</div><div class="line">**这是加粗文字**</div><div class="line">_这也是加粗文字_</div><div class="line">斜体</div><div class="line">*这是斜体文字*</div><div class="line">_这是斜体文字_</div></pre></td></tr></table></figure></p>
+<p>被偶数个<code>*</code>和<code>_</code>来表示粗体和斜体。</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>使用<code>` </code>(撇号)来包裹一小段代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">`Hello World`</div></pre></td></tr></table></figure></p>
+<p>若想在代码中使用撇号，可以使用多个撇号包裹里面需要添加的撇号，但注意里面的连续的撇号数量不能超过外面的数量。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">显示一个撇号,外面由两个撇号包裹</div><div class="line">`` ` ``</div></pre></td></tr></table></figure></p>
+<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">| Table | Col1 | Col2 |</div><div class="line">| ----- |:----:| ----:|</div><div class="line">| Row1  | 1-1  | 1-2  |</div></pre></td></tr></table></figure>
+<p>上面第二行中的点代表对齐方式,分别是默认（居右）、居中、居左;<br>参考：<br><a href="https://github.com/CompileYouth/front-end-study/blob/master/tool/markdown/Markdown-Learning.md" target="_blank" rel="external">https://github.com/CompileYouth/front-end-study/blob/master/tool/markdown/Markdown-Learning.md</a></p>
+
       
     </div>
 
@@ -518,13 +419,19 @@ gulp.watch(&apos;src&apos;, [&apos;default&apos;]);
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Martdown/" rel="tag"># Martdown</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/02/28/Hexo-comment/" rel="next" title="Hexo Next主题添加不蒜子统计">
-                <i class="fa fa-chevron-left"></i> Hexo Next主题添加不蒜子统计
+              <a href="/2017/04/01/hello-world/" rel="next" title="Hexo博客编写">
+                <i class="fa fa-chevron-left"></i> Hexo博客编写
               </a>
             
           </div>
@@ -532,10 +439,6 @@ gulp.watch(&apos;src&apos;, [&apos;default&apos;]);
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/02/28/sass/" rel="prev" title="sass入门">
-                sass入门 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -561,8 +464,8 @@ gulp.watch(&apos;src&apos;, [&apos;default&apos;]);
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/02/28/gulp/"
-           data-title="gulp入门" data-url="http://www.sunyip.top/2017/02/28/gulp/">
+      <div class="ds-thread" data-thread-key="2017/05/02/Martdown/"
+           data-title="Martdown语法简介" data-url="http://www.sunyip.top/2017/05/02/Martdown/">
       </div>
     
   </div>
@@ -662,7 +565,7 @@ gulp.watch(&apos;src&apos;, [&apos;default&apos;]);
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、打开命令行全局安装gulp"><span class="nav-number">1.</span> <span class="nav-text">1、打开命令行全局安装gulp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、在项目中安装gulp"><span class="nav-number">2.</span> <span class="nav-text">2、在项目中安装gulp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、安装gulp插件"><span class="nav-number">3.</span> <span class="nav-text">3、安装gulp插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、编写gulpfile-js"><span class="nav-number">4.</span> <span class="nav-text">4、编写gulpfile.js</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gulp核心API"><span class="nav-number"></span> <span class="nav-text">gulp核心API</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#标题"><span class="nav-number">1.</span> <span class="nav-text">标题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引用"><span class="nav-number">2.</span> <span class="nav-text">引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#无序列表"><span class="nav-number">3.</span> <span class="nav-text">无序列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有序列表"><span class="nav-number">4.</span> <span class="nav-text">有序列表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#列表"><span class="nav-number">4.1.</span> <span class="nav-text">列表</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码区块"><span class="nav-number">5.</span> <span class="nav-text">代码区块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#超链接"><span class="nav-number">6.</span> <span class="nav-text">超链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加粗和斜体"><span class="nav-number">7.</span> <span class="nav-text">加粗和斜体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">8.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表格"><span class="nav-number">9.</span> <span class="nav-text">表格</span></a></li></ol></div>
             
 
           </div>
