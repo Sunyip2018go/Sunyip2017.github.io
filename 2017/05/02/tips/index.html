@@ -1,0 +1,752 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="html css js," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="汇集前端开发中的小技巧">
+<meta property="og:type" content="article">
+<meta property="og:title" content="小Tips">
+<meta property="og:url" content="http://www.sunyip.top/2017/05/02/tips/index.html">
+<meta property="og:site_name" content="Sunyip的漫漫前端路">
+<meta property="og:description" content="汇集前端开发中的小技巧">
+<meta property="og:image" content="http://ol3qapevr.bkt.clouddn.com/static/images/tip1.gif">
+<meta property="og:image" content="http://ol3qapevr.bkt.clouddn.com/static/images/tip1_tu.gif">
+<meta property="og:updated_time" content="2017-05-02T08:47:36.665Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="小Tips">
+<meta name="twitter:description" content="汇集前端开发中的小技巧">
+<meta name="twitter:image" content="http://ol3qapevr.bkt.clouddn.com/static/images/tip1.gif">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.sunyip.top/2017/05/02/tips/"/>
+
+
+
+
+
+  <title> 小Tips | Sunyip的漫漫前端路 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Sunyip的漫漫前端路</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle"></p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于我
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://www.sunyip.top/2017/05/02/tips/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Sunyip">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Sunyip的漫漫前端路">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Sunyip的漫漫前端路" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                小Tips
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-02T13:46:14+08:00">
+                2017-05-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/html-css-js/" itemprop="url" rel="index">
+                    <span itemprop="name">html css js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/05/02/tips/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/05/02/tips/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-eye"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>汇集前端开发中的小技巧<br><a id="more"></a></p>
+<the rest="" of="" comments="" |="" 余下全文="">
+
+<h3 id="div模拟input实现文字与光标的不同颜色"><a href="#div模拟input实现文字与光标的不同颜色" class="headerlink" title="div模拟input实现文字与光标的不同颜色"></a>div模拟input实现文字与光标的不同颜色</h3> <img title="tip1" src="http://ol3qapevr.bkt.clouddn.com/static/images/tip1.gif">
+<p>观察效果图</p>
+<ol>
+<li>输入的内容为黑色</li>
+<li>光标为黄色<br>所以问题就在于输入的内容的颜色要与光标的颜色不同；</li>
+</ol>
+<h5 id="首先使用-focus，失败，字体也跟着变色"><a href="#首先使用-focus，失败，字体也跟着变色" class="headerlink" title="首先使用:focus，失败，字体也跟着变色;"></a>首先使用:focus，失败，字体也跟着变色;</h5><h5 id="接下来试一下text-fill-color，成功，text-fill-color为文字填充颜色，当color也存在时，会覆盖color；"><a href="#接下来试一下text-fill-color，成功，text-fill-color为文字填充颜色，当color也存在时，会覆盖color；" class="headerlink" title="接下来试一下text-fill-color，成功，text-fill-color为文字填充颜色，当color也存在时，会覆盖color；"></a>接下来试一下text-fill-color，成功，text-fill-color为文字填充颜色，当color也存在时，会覆盖color；</h5><p>关键点就在这，当给input设置color属性的时候，字体与光标的颜色是一样的，那再设置text-fill-color，color会被覆盖，字体的颜色会被设置成text-fill-color的颜色；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;Tip&lt;/title&gt;</div><div class="line">    &lt;style&gt;</div><div class="line">        input &#123;</div><div class="line">            font-size: 24px;</div><div class="line">            padding: 10px;</div><div class="line">            color: red;</div><div class="line">            -webkit-text-fill-color: black;</div><div class="line">        &#125;</div><div class="line">    &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">    &lt;input type=&quot;text&quot;&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+<p>然而text-fill-color的兼容性还不是太好，IE与火狐都不支持，好鸡肋；</p>
+<h5 id="进入正题使用div模拟一下input"><a href="#进入正题使用div模拟一下input" class="headerlink" title="进入正题使用div模拟一下input"></a>进入正题使用div模拟一下input</h5><p>div模拟出input的样式，使用:after制作光标,代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">html部分</div><div class="line">&lt;div id=&quot;box&quot;&gt;</div><div class="line">	//输入框</div><div class="line">    &lt;div id=&quot;d&quot;&gt;&lt;/div&gt;</div><div class="line">    &lt;button disabled class=&quot;btn&quot;&gt;确定&lt;/button&gt;</div><div class="line">    &lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; id=&quot;td&quot;&gt;</div><div class="line">        &lt;tbody&gt;</div><div class="line">            &lt;tr&gt;</div><div class="line">                &lt;td class=&quot;number&quot;&gt;1&lt;/td&gt;</div><div class="line">                &lt;td class=&quot;number&quot;&gt;2&lt;/td&gt;</div><div class="line">                &lt;td class=&quot;number&quot;&gt;3&lt;/td&gt;</div><div class="line">                &lt;td class=&quot;hide&quot;&gt;隐藏&lt;/td&gt;</div><div class="line">            &lt;/tr&gt;</div><div class="line">            &lt;tr&gt;</div><div class="line">                &lt;td class=&quot;number&quot;&gt;4&lt;/td&gt;</div><div class="line">                &lt;td class=&quot;number&quot;&gt;5&lt;/td&gt;</div><div class="line">                &lt;td class=&quot;number&quot;&gt;6&lt;/td&gt;</div><div class="line">                &lt;td class=&quot;del&quot;&gt;删除&lt;/td&gt;  </div><div class="line">            &lt;/tr&gt;</div><div class="line">            &lt;tr&gt;</div><div class="line">                &lt;td class=&quot;number&quot;&gt;7&lt;/td&gt;</div><div class="line">                &lt;td class=&quot;number&quot;&gt;8&lt;/td&gt;</div><div class="line">                &lt;td class=&quot;number&quot;&gt;9&lt;/td&gt;</div><div class="line">                &lt;td rowspan=&apos;2&apos; class=&quot;determine&quot;&gt;确定&lt;/td&gt;</div><div class="line">            &lt;/tr&gt;</div><div class="line">            &lt;tr&gt;</div><div class="line">                &lt;td&gt;&lt;/td&gt;</div><div class="line">                &lt;td class=&quot;number&quot;&gt;0&lt;/td&gt;</div><div class="line">                &lt;td class=&quot;delAll&quot;&gt;清空&lt;/td&gt;</div><div class="line">            &lt;/tr&gt;</div><div class="line">        &lt;/tbody&gt;</div><div class="line">    &lt;/table&gt; </div><div class="line">    &lt;div id=&quot;show&quot;&gt;显示键盘&lt;/div&gt;   </div><div class="line">  &lt;/div&gt;</div></pre></td></tr></table></figure></p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div></pre></td><td class="code"><pre><div class="line">CSS部分</div><div class="line">&lt;style&gt;</div><div class="line">      *&#123;</div><div class="line">          padding:0;</div><div class="line">          margin:0;</div><div class="line">      &#125;</div><div class="line">      #box&#123;</div><div class="line">          width: 500px;</div><div class="line">          height: 220px;</div><div class="line">          margin:100px auto;</div><div class="line">          overflow: hidden;</div><div class="line">          position:relative;</div><div class="line">      &#125;</div><div class="line">      div#d&#123;</div><div class="line">          width:300px;</div><div class="line">          height:30px;</div><div class="line">          border:1px solid #ccc;</div><div class="line">          position:absolute;</div><div class="line">          text-align: center;</div><div class="line">          line-height:30px;</div><div class="line">      &#125;</div><div class="line">      div#d:after&#123;</div><div class="line">          content:&apos;&apos;;</div><div class="line">          height:50%;</div><div class="line">          border-right:2px solid red;</div><div class="line">          position:absolute;</div><div class="line">          top:0;</div><div class="line">          bottom:0;</div><div class="line">          margin:auto;</div><div class="line">          animation:focus 0.7s linear infinite;</div><div class="line">      &#125;</div><div class="line">      @keyframes focus&#123;</div><div class="line">          0%&#123;</div><div class="line">              opacity: 1;</div><div class="line">          &#125;</div><div class="line">          100%&#123;</div><div class="line">              opacity: 0;</div><div class="line">          &#125;</div><div class="line">      &#125;</div><div class="line">      button&#123;</div><div class="line">          width:50px;</div><div class="line">          height: 30px;</div><div class="line">          background-color:#ccc;</div><div class="line">          position:absolute;</div><div class="line">          left:310px;</div><div class="line">          outline: none;</div><div class="line">          border:none;</div><div class="line">      &#125;</div><div class="line">      button.active&#123;</div><div class="line">          background-color:yellow;</div><div class="line">      &#125;</div><div class="line">      #td&#123;</div><div class="line">          position:absolute;</div><div class="line">          top:42px;</div><div class="line">      &#125;</div><div class="line">      #td.hide&#123;</div><div class="line">          transform :translateX(-130px);</div><div class="line">          transition: transform 1s linear;</div><div class="line">      &#125;</div><div class="line">      #td.show&#123;</div><div class="line">          transform :translateX(0);</div><div class="line">          transition: transform 1s linear;</div><div class="line">      &#125;</div><div class="line">      td&#123;</div><div class="line">          width:30px;</div><div class="line">          height:30px;</div><div class="line">          text-align: center;</div><div class="line">          cursor: pointer;</div><div class="line">      &#125;</div><div class="line">      tr:nth-child(3) td:last-child&#123;</div><div class="line">           background-color: #ccc;</div><div class="line">      &#125;</div><div class="line">      tr:last-child td:nth-child(1)&#123;</div><div class="line">          background-color: #ccc;</div><div class="line">      &#125;</div><div class="line">      #show&#123;</div><div class="line">          position: absolute;</div><div class="line">          top:100px;</div><div class="line">          left:-70px;</div><div class="line">          border:2px solid #ccc;</div><div class="line">          cursor:pointer;</div><div class="line">      &#125;</div><div class="line">      #show.show1&#123;</div><div class="line">          transform:translateX(70px);</div><div class="line">          transition: transform .5s linear;</div><div class="line">      &#125;</div><div class="line">      #show.hide1&#123;</div><div class="line">          transform:translateX(0);</div><div class="line">          transition: transform .5s linear;</div><div class="line">      &#125;</div><div class="line">  &lt;/style&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line">js部分</div><div class="line">&lt;script&gt;</div><div class="line">        var numbers = document.querySelectorAll(&apos;.number&apos;),</div><div class="line">            del = document.querySelector(&apos;.del&apos;),</div><div class="line">            delAll = document.querySelector(&apos;.delAll&apos;),</div><div class="line">            btn = document.querySelector(&apos;.btn&apos;),</div><div class="line">            hide = document.querySelector(&apos;.hide&apos;),</div><div class="line">            d = document.getElementById(&apos;d&apos;),</div><div class="line">            td = document.getElementById(&apos;td&apos;),</div><div class="line">            show = document.getElementById(&apos;show&apos;),</div><div class="line">            determine = document.querySelector(&apos;.determine&apos;);</div><div class="line">       //清空</div><div class="line">       delAll.addEventListener(&apos;click&apos;,function()&#123;</div><div class="line">          d.innerHTML =  d.innerHTML.slice(d.innerHTML.length,-1);</div><div class="line">          btn.setAttribute(&apos;disabled&apos;,&apos;true&apos;);</div><div class="line">          btn.className = &apos;&apos;;</div><div class="line">          btn.style.cursor = &apos;&apos;;</div><div class="line">       &#125;,false);</div><div class="line">       //删除</div><div class="line">       del.addEventListener(&apos;click&apos;,function()&#123;</div><div class="line">          d.innerHTML =  d.innerHTML.slice(0,d.innerHTML.length-1);</div><div class="line">           if(d.innerHTML.length &lt;= 0 )&#123;</div><div class="line">                btn.setAttribute(&apos;disabled&apos;,&apos;true&apos;);</div><div class="line">                btn.className = &apos;&apos;;</div><div class="line">                btn.style.cursor = &apos;&apos;;</div><div class="line">           &#125;</div><div class="line">       &#125;,false);</div><div class="line">       //点击数字键</div><div class="line">       numbers.forEach(function(ele)&#123;</div><div class="line">          ele.addEventListener(&apos;click&apos;,function(e)&#123;</div><div class="line">              e.preventDefault();</div><div class="line">             d.innerHTML+=this.innerHTML;</div><div class="line">              if(d.innerHTML.length&gt;0)&#123;</div><div class="line">                 btn.removeAttribute(&apos;disabled&apos;);</div><div class="line">                 btn.style.cursor = &apos;pointer&apos;;</div><div class="line">                 btn.className = &apos;active&apos;;</div><div class="line">              &#125;</div><div class="line">          &#125;,false)</div><div class="line">       &#125;);</div><div class="line">       //隐藏</div><div class="line">       hide.addEventListener(&apos;click&apos;,function()&#123;</div><div class="line">           td.className = &quot;hide&quot;;</div><div class="line">           show.className = &apos;show1&apos;;</div><div class="line">       &#125;,false);</div><div class="line">       //显示键盘</div><div class="line">       show.addEventListener(&quot;click&quot;,function()&#123;</div><div class="line">           this.className = &quot;hide1&quot;;</div><div class="line">           td.className = &quot;show&quot;;</div><div class="line">       &#125;,false)</div><div class="line">       //点击确定键</div><div class="line">       determine.addEventListener(&apos;click&apos;,function()&#123;</div><div class="line">           alert(d.innerHTML);</div><div class="line">       &#125;,false)</div><div class="line">    &lt;/script&gt;</div></pre></td></tr></table></figure>
+ <img title="tip1'class'" src="http://ol3qapevr.bkt.clouddn.com/static/images/tip1_tu.gif">
+<p> 然而这种方法也不是完美的，在移动端中使用因为不是input，所以不能自动打开软键盘，而且光标也是打开页面就出现的</p>
+<p> 参考：<a href="http://gettotally.com/2017/04/04/div-input/" target="_blank" rel="external">http://gettotally.com/2017/04/04/div-input/</a></p>
+</the>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/html-css-js/" rel="tag"># html css js</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/02/Martdown/" rel="next" title="Martdown语法简介">
+                <i class="fa fa-chevron-left"></i> Martdown语法简介
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/05/02/tips/"
+           data-title="小Tips" data-url="http://www.sunyip.top/2017/05/02/tips/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="Sunyip" />
+          <p class="site-author-name" itemprop="name">Sunyip</p>
+          <p class="site-description motion-element" itemprop="description">路虽远,无所畏</p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#div模拟input实现文字与光标的不同颜色"><span class="nav-number">1.</span> <span class="nav-text">div模拟input实现文字与光标的不同颜色</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#首先使用-focus，失败，字体也跟着变色"><span class="nav-number">1.0.1.</span> <span class="nav-text">首先使用:focus，失败，字体也跟着变色;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#接下来试一下text-fill-color，成功，text-fill-color为文字填充颜色，当color也存在时，会覆盖color；"><span class="nav-number">1.0.2.</span> <span class="nav-text">接下来试一下text-fill-color，成功，text-fill-color为文字填充颜色，当color也存在时，会覆盖color；</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#进入正题使用div模拟一下input"><span class="nav-number">1.0.3.</span> <span class="nav-text">进入正题使用div模拟一下input</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sunyip</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"sunyip"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
