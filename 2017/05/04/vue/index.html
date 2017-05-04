@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="javascript," />
+  <meta name="keywords" content="Vue," />
 
 
 
@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="是时候学习一下ES6了">
+<meta name="description" content="再不好好学习Vue，怎么能天天向上">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ES6入门">
-<meta property="og:url" content="http://www.sunyip.top/2017/05/03/ES6入门/index.html">
+<meta property="og:title" content="聊一聊Vue">
+<meta property="og:url" content="http://www.sunyip.top/2017/05/04/vue/index.html">
 <meta property="og:site_name" content="Sunyip的漫漫前端路">
-<meta property="og:description" content="是时候学习一下ES6了">
-<meta property="og:updated_time" content="2017-05-04T07:24:06.021Z">
+<meta property="og:description" content="再不好好学习Vue，怎么能天天向上">
+<meta property="og:updated_time" content="2017-05-04T07:04:34.124Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ES6入门">
-<meta name="twitter:description" content="是时候学习一下ES6了">
+<meta name="twitter:title" content="聊一聊Vue">
+<meta name="twitter:description" content="再不好好学习Vue，怎么能天天向上">
 
 
 
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://www.sunyip.top/2017/05/03/ES6入门/"/>
+  <link rel="canonical" href="http://www.sunyip.top/2017/05/04/vue/"/>
 
 
 
 
 
-  <title> ES6入门 | Sunyip的漫漫前端路 </title>
+  <title> 聊一聊Vue | Sunyip的漫漫前端路 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -260,7 +260,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://www.sunyip.top/2017/05/03/ES6入门/">
+  <link itemprop="mainEntityOfPage" href="http://www.sunyip.top/2017/05/04/vue/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Sunyip">
@@ -284,7 +284,7 @@
             
             
               
-                ES6入门
+                聊一聊Vue
               
             
           </h1>
@@ -299,8 +299,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-03T16:34:41+08:00">
-                2017-05-03
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-04T14:54:58+08:00">
+                2017-05-04
               </time>
             
 
@@ -322,8 +322,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
+                  <a href="/categories/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
                   </a>
                 </span>
 
@@ -340,8 +340,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/05/03/ES6入门/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/05/03/ES6入门/" itemprop="commentCount"></span>
+                <a href="/2017/05/04/vue/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/05/04/vue/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -372,39 +372,10 @@
       
 
       
-        <p>是时候学习一下ES6了<br><a id="more"></a></p>
+        <p>再不好好学习Vue，怎么能天天向上<br><a id="more"></a></p>
 <the rest="" of="" comments="" |="" 余下全文="">
 
-<h3 id="let与const"><a href="#let与const" class="headerlink" title="let与const"></a>let与const</h3><h4 id="let"><a href="#let" class="headerlink" title="let"></a>let</h4><p>es6定义了代码块，所谓的代码块就是用大括号包裹的代码块，比如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function fire(bool)&#123;</div><div class="line">	if(bool)&#123;</div><div class="line">		var fool = &quot;bar&quot;;</div><div class="line">	&#125;</div><div class="line">	console.log(foo);</div><div class="line">&#125;</div><div class="line">fire(true);  //=&gt;bar</div></pre></td></tr></table></figure></p>
-<p>虽然变量foo位于if语句的代码块中，但是Javascript并没有块级作用域，因此被添加到当前的执行环境中-即函数中，在函数内部都能访问的到。<br>另外var还存在着变量提升：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function fire(bool)&#123;</div><div class="line">	if(bool)&#123;</div><div class="line">		var foo = &apos;bar&apos;;</div><div class="line">	&#125;else&#123;</div><div class="line">		console.log(foo);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">fire(bool) //=&gt;underfined</div></pre></td></tr></table></figure></p>
-<p>上述例子返回的是underfined，变量被提升到作用域的顶部，等价于:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function fire(bool)&#123;</div><div class="line">	var foo;</div><div class="line">	if(bool)&#123;</div><div class="line">		foo=&quot;bar&quot;;</div><div class="line">	&#125;else&#123;</div><div class="line">		console.log(foo)</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">fire(false);</div></pre></td></tr></table></figure>
-<p>在javascript中，声明的变量未被赋值会被赋值为underfined,因此，结果是underfined；</p>
-<p>为了解决上述问题，引入let关键字；<br>首先，let定义的变量只在代码块中有效：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function fire(bool)&#123;</div><div class="line">	if(bool)&#123;</div><div class="line">		var foo = &quot;bar&quot;;</div><div class="line">	&#125;</div><div class="line">	console.log(foo);</div><div class="line">&#125;</div><div class="line">fire(true)  //=&gt;foo is not defined  foo未定义</div></pre></td></tr></table></figure></p>
-<p>因此，使用let上述问题完全解决。</p>
-<h4 id="const"><a href="#const" class="headerlink" title="const"></a>const</h4><p>const与let的基本用法相同，定义的变量也具有块级作用域，也不会发生变量提升，不同的地方，const定义的变量只能赋值一次。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">const a = 1;</div><div class="line">a=2;  //执行到这就报错，Uncaught TypeError: Assignment to constant variable</div><div class="line">console.log(a);</div></pre></td></tr></table></figure>
-<p>对于数组和对象，值是可以改变的：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">const arr = [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;];</div><div class="line">arr.push(&apos;d&apos;);</div><div class="line">console.log(arr);  //[&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;]</div><div class="line">console.log(arr.pop());  //d</div></pre></td></tr></table></figure>
-<p>那么什么时候使用const呢？在一些不需要重复赋值的场合可以用：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">const provinces = [];</div><div class="line">const months = [];</div></pre></td></tr></table></figure>
-<h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><p>ES6允许使用’箭头’(=&gt;)定义函数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var f = v =&gt; v;</div></pre></td></tr></table></figure></p>
-<p>上面的箭头函数等同于：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var f = function(v)&#123;</div><div class="line">	return v;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>如果箭头函数不需要参数或需要多个参数，就是用一个括号代表参数部分：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">var f = () =&gt; 5;</div><div class="line"></div><div class="line">等同于</div><div class="line"></div><div class="line">var f = function()&#123;</div><div class="line">	return 5;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var sum = (num1,num2) =&gt; num1+num2;</div><div class="line">也可以这样写：</div><div class="line">var sum = (num1,num2) =&gt; &#123;return num1 + num2&#125;</div><div class="line"></div><div class="line">等同于</div><div class="line"></div><div class="line">var sum = function(num1,num2)&#123;</div><div class="line">	return num1 + num2;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>如果箭头函数直接返回一个对象，必须在大括号外面加上括号：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var getTempItem = id =&gt; (&#123;id:id,name:&apos;Temp&apos;&#125;);</div></pre></td></tr></table></figure>
-<p>箭头函数可以与<code>变量解构</code>结合使用:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">const full = (&#123;first,last&#125;) =&gt; first + &apos; &apos; + last;</div><div class="line"></div><div class="line">等同于</div><div class="line">function full(person)&#123;</div><div class="line">	return person.first + &apos; &apos; + person.last;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>说一下<strong><strong>变量解构</strong></strong>：</p>
-<p><code>变量解构</code>是指从数组和对象对象中提取值，对变量进行赋值；</p>
-<p>以前是这样:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">let a = 1;</div><div class="line">let b =2;</div><div class="line">let c = 3;</div></pre></td></tr></table></figure>
-<p>ES6允许这样写:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">let [a,b,c] = [1,2,3];</div></pre></td></tr></table></figure>
-<p>上面代码表示，可以从数组中提取值，按照对应的位置，对变量赋值。   </p>
-<h3 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h3></the>
+<h3 id="基础结构"><a href="#基础结构" class="headerlink" title="基础结构"></a>基础结构</h3></the>
       
     </div>
 
@@ -427,7 +398,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/javascript/" rel="tag"># javascript</a>
+            <a href="/tags/Vue/" rel="tag"># Vue</a>
           
         </div>
       
@@ -436,8 +407,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/02/tips/" rel="next" title="小Tips">
-                <i class="fa fa-chevron-left"></i> 小Tips
+              <a href="/2017/05/03/ES6入门/" rel="next" title="ES6入门">
+                <i class="fa fa-chevron-left"></i> ES6入门
               </a>
             
           </div>
@@ -446,8 +417,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/05/04/vue/" rel="prev" title="聊一聊Vue">
-                聊一聊Vue <i class="fa fa-chevron-right"></i>
+              <a href="/2017/05/04/php/" rel="prev" title="php从入门到放弃">
+                php从入门到放弃 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -474,8 +445,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/05/03/ES6入门/"
-           data-title="ES6入门" data-url="http://www.sunyip.top/2017/05/03/ES6入门/">
+      <div class="ds-thread" data-thread-key="2017/05/04/vue/"
+           data-title="聊一聊Vue" data-url="http://www.sunyip.top/2017/05/04/vue/">
       </div>
     
   </div>
@@ -575,7 +546,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#let与const"><span class="nav-number">1.</span> <span class="nav-text">let与const</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#let"><span class="nav-number">1.1.</span> <span class="nav-text">let</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#const"><span class="nav-number">1.2.</span> <span class="nav-text">const</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#箭头函数"><span class="nav-number">2.</span> <span class="nav-text">箭头函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise"><span class="nav-number">3.</span> <span class="nav-text">Promise</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基础结构"><span class="nav-number">1.</span> <span class="nav-text">基础结构</span></a></li></ol></div>
             
 
           </div>

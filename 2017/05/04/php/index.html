@@ -1,0 +1,798 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="php," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="学习一点php，了解一下后台的知识">
+<meta property="og:type" content="article">
+<meta property="og:title" content="php从入门到放弃">
+<meta property="og:url" content="http://www.sunyip.top/2017/05/04/php/index.html">
+<meta property="og:site_name" content="Sunyip的漫漫前端路">
+<meta property="og:description" content="学习一点php，了解一下后台的知识">
+<meta property="og:updated_time" content="2017-05-04T10:04:50.819Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="php从入门到放弃">
+<meta name="twitter:description" content="学习一点php，了解一下后台的知识">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.sunyip.top/2017/05/04/php/"/>
+
+
+
+
+
+  <title> php从入门到放弃 | Sunyip的漫漫前端路 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Sunyip的漫漫前端路</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle"></p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于我
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://www.sunyip.top/2017/05/04/php/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Sunyip">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Sunyip的漫漫前端路">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Sunyip的漫漫前端路" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                php从入门到放弃
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-04T15:31:02+08:00">
+                2017-05-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/php/" itemprop="url" rel="index">
+                    <span itemprop="name">php</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/05/04/php/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/05/04/php/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-eye"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>学习一点php，了解一下后台的知识<br><a id="more"></a></p>
+<the rest="" of="" comments="" |="" 余下全文="">
+
+<h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><ol>
+<li>变量以美元符”$”开始</li>
+<li><p>变量不能以数字开头，但是可以在中间或者结尾</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ipone6 = 4000;  //可以的</div></pre></td></tr></table></figure>
+</li>
+<li><p>变量中不能含有特殊字符(下划线”_”不算特殊符号)和中文</p>
+</li>
+<li>严格区分大小写</li>
+</ol>
+<h4 id="echo"><a href="#echo" class="headerlink" title="echo"></a>echo</h4><p> echo是php最常用的一个输入、显示功能的命令<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">echo 123;</div><div class="line">?&gt;</div><div class="line">&lt;?php</div><div class="line">$iphone = 4000;</div><div class="line">echo $iphone;</div><div class="line">?&gt;</div></pre></td></tr></table></figure></p>
+<h4 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h4><p><strong><strong>单行注释</strong></strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 单行注释</div><div class="line"># #号也表示单行注释</div></pre></td></tr></table></figure>
+<p><strong><strong>多行注释</strong></strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line"> * 多行注释</div><div class="line"> */</div></pre></td></tr></table></figure>
+<h4 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h4><h5 id="整型"><a href="#整型" class="headerlink" title="整型"></a>整型</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">$int = 10;</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+<h5 id="布尔型"><a href="#布尔型" class="headerlink" title="布尔型"></a>布尔型</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">$bool = true;</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+<h5 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h5><p>字符串声明有三种方式：<br>1. 单引号声明</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">$str = &apos;你好，世界&apos;;</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+<p>2. 双引号引号声明</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">$str = &quot;你好，世界&quot;;</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+<p>3. 字界符声明</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">$str = &lt;&lt;&lt;A</div><div class="line">如果这就是爱</div><div class="line">A;</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+<p>如果文字输出乱码，那就在最前面加上这段代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta http-equiv=&apos;Content-Type&apos; content=&apos;text/html; charset=utf-8&apos; /&gt;</div></pre></td></tr></table></figure>
+<p><strong><strong>重点</strong></strong>：<br>字符串中单引号与双引号的区别<br>1. 双引号解析变量，但是单引号不能解析变量；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;meta http-equiv=&apos;Content-Type&apos; content=&apos;text/html; charset=utf-8&apos; /&gt; </div><div class="line">&lt;?php</div><div class="line">$str = &lt;&lt;&lt;A</div><div class="line">如果这就是爱</div><div class="line">A;</div><div class="line">$str1 = &apos;$str&apos;;</div><div class="line">echo $str1;   //$str</div><div class="line">$str2 = &quot;$str&quot;;</div><div class="line">echo $str2;  //如果这就是爱</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+<h5 id="浮点型-float"><a href="#浮点型-float" class="headerlink" title="浮点型(float)"></a>浮点型(float)</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$fudian = 1.34;</div><div class="line">var_dump($fudian); //float(1.34)</div></pre></td></tr></table></figure>
+<p>var_dump是一个函数，会打印出括号里变量的数据类型，还会对应的显示变量的长度和值；</p>
+<h5 id="null"><a href="#null" class="headerlink" title="null"></a>null</h5><p>null就是没有；<br>主要有以下情况会产生空：<br>1. 变量赋值为null;<br>2. 使用函数unset()将变量毁掉；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">$int = null;</div><div class="line">var_dump($int);  //NULL</div><div class="line">$fl = &quot;Hello&quot;;</div><div class="line">unset($fl);</div><div class="line">var_dump($fl);  //NULL</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+<p>上述代码中，<code>unset($fl)</code>报错<code>Notice: Undefined variable: fl in D:\phpStudy\WWW\first.php on line 5</code>,加上这段代码就没事了<code>ini_set(&quot;error_reporting&quot;,E_ALL ^ E_NOTICE);</code><br>等有时间在研究一下；</p>
+<p>empty()括号中传入一个变量，这个变量的值如果为false或者为null，返回true;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">$apple = null;</div><div class="line">if(empty($apple))&#123;</div><div class="line">    echo &apos;执行了,说明返回的是true&apos;;</div><div class="line">&#125;else&#123;</div><div class="line">   echo &apos;执行了,说明返回的是false&apos;;</div><div class="line">&#125;</div><div class="line">?&gt;</div></pre></td></tr></table></figure></p>
+<p>isset()可以向括号中传入一个或者多个变量，变量与变量之间用逗号分开，只要有一个变量为null，就返回false，否则返回true；</p>
+<h5 id="资源类型"><a href="#资源类型" class="headerlink" title="资源类型"></a>资源类型</h5><p>资源类型是由专门的函数来建立和使用，例如打开文件、数据连接、图形画布。<br>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">$file=fopen(&quot;f.txt&quot;,&quot;r&quot;);   //打开文件</div><div class="line">$con=mysql_connect(&quot;localhost&quot;,&quot;root&quot;,&quot;root&quot;);  //连接数据库</div><div class="line">$img=imagecreate(100,100);//图形画布</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+<h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><p>常量可以理解成值不变的量(如圆周率)，分为自定义常量和系统常量；</p>
+<h4 id="自定义常量"><a href="#自定义常量" class="headerlink" title="自定义常量"></a>自定义常量</h4><p>定义常量使用define();</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">$p = &apos;PI&apos;;</div><div class="line">define(&apos;PI&apos;,3.14);</div><div class="line">echo PI;  //3.14</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+<h4 id="系统常量"><a href="#系统常量" class="headerlink" title="系统常量"></a>系统常量</h4><p>系统常量是PHP已经定义好的常量，我们可以直接拿来使用，常见的系统常量有：</p>
+<p>（1）<strong>FILE</strong> :php程序文件名。它可以帮助我们获取当前文件在服务器的物理位置。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">echo __FILE__;  //D:\phpStudy\WWW\first.php</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+<p>（2）<strong>LINE</strong> :PHP程序文件行数。它可以告诉我们，当前代码在第几行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">echo __LINE__;  //3</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+<p>（3）PHP_VERSION:当前解析器的版本号。它可以告诉我们当前PHP解析器的版本号，我们可以提前知道我们的PHP代码是否可被该PHP解析器解析。</p>
+<p>（4）PHP_OS：执行当前PHP版本的操作系统名称。它可以告诉我们服务器所用的操作系统名称，我们可以根据该操作系统优化我们的代码</p>
+<h4 id="常量如何取值"><a href="#常量如何取值" class="headerlink" title="常量如何取值"></a>常量如何取值</h4><p>1. 直接使用常量名获取值<br>2. 使用constant()函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">define(&apos;PI&apos;,3.14);</div><div class="line">$r = 1;</div><div class="line">$area = constant(&apos;PI&apos;)*$r;</div><div class="line">echo $area;  //3.14</div><div class="line">?&gt;</div></pre></td></tr></table></figure></p>
+<h4 id="判断常量是否被定义"><a href="#判断常量是否被定义" class="headerlink" title="判断常量是否被定义"></a>判断常量是否被定义</h4><p>使用define()来判断，返回布尔值;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">define(&apos;PI&apos;,3.14);</div><div class="line">$p = &apos;PI&apos;;</div><div class="line">$is1 = define($p);</div><div class="line">$is2 = define(&apos;PI1&apos;);</div><div class="line">var_dump($is1); //bool(true)</div><div class="line">var_dump($is2);  //bool(false)</div><div class="line">?&gt;</div></pre></td></tr></table></figure></p>
+<h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><h4 id="算数运算符"><a href="#算数运算符" class="headerlink" title="算数运算符"></a>算数运算符</h4><p>加、减、乘、除、取余和js一样不说了；</p>
+<h4 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h4><p> 有两种方式赋值：<br> 1. “=”<br> 2. “&amp;”<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$c = &amp;$a;</div></pre></td></tr></table></figure></p>
+<h4 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h4><p> 说个不一样的，其他和js相同<br> “&lt;&gt;” 不等</p>
+<h4 id="三元运算符"><a href="#三元运算符" class="headerlink" title="三元运算符"></a>三元运算符</h4><p> 略</p>
+<h4 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h4><p>$a and $b,$a &amp;&amp; $b<br>都为true，返回true；</p>
+<p>$a or $b,$a || $b<br>一个为true，返回true；</p>
+<p>$a xor $b 有且只有一个为true，返回true；</p>
+<p>!$a 不为true,返回true;</p>
+<h4 id="字符串链接运算符"><a href="#字符串链接运算符" class="headerlink" title="字符串链接运算符"></a>字符串链接运算符</h4><p>1. “.”<br>2. “.=”</p>
+<h4 id="错误控制运算符"><a href="#错误控制运算符" class="headerlink" title="错误控制运算符"></a>错误控制运算符</h4><p>“@”</p>
+<h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h3><h4 id="条件结构"><a href="#条件结构" class="headerlink" title="条件结构"></a>条件结构</h4><h5 id="if…else"><a href="#if…else" class="headerlink" title="if…else"></a>if…else</h5><h5 id="if…else-if…"><a href="#if…else-if…" class="headerlink" title="if…else if…"></a>if…else if…</h5><h5 id="if…else-if…else…"><a href="#if…else-if…else…" class="headerlink" title="if…else if…else…"></a>if…else if…else…</h5><h5 id="switch…case…"><a href="#switch…case…" class="headerlink" title="switch…case…"></a>switch…case…</h5><h4 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h4><h5 id="while"><a href="#while" class="headerlink" title="while"></a>while</h5><h5 id="do…while…"><a href="#do…while…" class="headerlink" title="do…while…"></a>do…while…</h5><h5 id="for"><a href="#for" class="headerlink" title="for"></a>for</h5><h5 id="foreach"><a href="#foreach" class="headerlink" title="foreach"></a>foreach</h5><h2 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h2><h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><h4 id="创建空数组"><a href="#创建空数组" class="headerlink" title="创建空数组"></a>创建空数组</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$arr = array();</div></pre></td></tr></table></figure>
+<h4 id="索引数组"><a href="#索引数组" class="headerlink" title="索引数组"></a>索引数组</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$fruit = array(&apos;苹果&apos;,&apos;香蕉&apos;,&apos;菠萝&apos;);</div></pre></td></tr></table></figure>
+<p>数组键是从0开始；<br>使用print_r($fruit)输出数组键及对应的值;</p>
+<h5 id="索引数组赋值"><a href="#索引数组赋值" class="headerlink" title="索引数组赋值"></a>索引数组赋值</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$arr = array();</div><div class="line">$arr[0] = &apos;苹果&apos;;</div><div class="line">或</div><div class="line">$arr = array(0=&gt;&quot;苹果&quot;)；</div><div class="line">或</div><div class="line">$arr = array(&apos;苹果&apos;);</div></pre></td></tr></table></figure>
+<h5 id="foreach访问数组中的值"><a href="#foreach访问数组中的值" class="headerlink" title="foreach访问数组中的值"></a>foreach访问数组中的值</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$fruit = array(&apos;苹果&apos;,&apos;香蕉&apos;,&apos;菠萝&apos;);</div><div class="line">foreach($fruit as $k=&gt;$v)&#123;</div><div class="line">	echo &apos;&lt;br/&gt;第&apos;.$k&apos;值为&apos;.$v;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="关联数组"><a href="#关联数组" class="headerlink" title="关联数组"></a>关联数组</h4><h5 id="关联数组赋值"><a href="#关联数组赋值" class="headerlink" title="关联数组赋值"></a>关联数组赋值</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$fruit = array(</div><div class="line">	&apos;apple&apos;=&gt;&apos;苹果&apos;,</div><div class="line">	&apos;banana&apos;=&gt;&apos;香蕉&apos;,</div><div class="line">	&apos;pineapple&apos;=&gt;&apos;菠萝&apos;</div><div class="line">)；</div><div class="line">或</div><div class="line">$arr[&apos;apple&apos;]=&apos;苹果&apos;；</div></pre></td></tr></table></figure>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3></the>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/php/" rel="tag"># php</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/04/vue/" rel="next" title="聊一聊Vue">
+                <i class="fa fa-chevron-left"></i> 聊一聊Vue
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/05/04/php/"
+           data-title="php从入门到放弃" data-url="http://www.sunyip.top/2017/05/04/php/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="Sunyip" />
+          <p class="site-author-name" itemprop="name">Sunyip</p>
+          <p class="site-description motion-element" itemprop="description">路虽远,无所畏</p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础"><span class="nav-number">1.</span> <span class="nav-text">基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#变量"><span class="nav-number">1.1.</span> <span class="nav-text">变量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#echo"><span class="nav-number">1.1.1.</span> <span class="nav-text">echo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注释"><span class="nav-number">1.1.2.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据类型"><span class="nav-number">1.1.3.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#整型"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">整型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#布尔型"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">布尔型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#字符串"><span class="nav-number">1.1.3.3.</span> <span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#浮点型-float"><span class="nav-number">1.1.3.4.</span> <span class="nav-text">浮点型(float)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#null"><span class="nav-number">1.1.3.5.</span> <span class="nav-text">null</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#资源类型"><span class="nav-number">1.1.3.6.</span> <span class="nav-text">资源类型</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常量"><span class="nav-number">1.2.</span> <span class="nav-text">常量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#自定义常量"><span class="nav-number">1.2.1.</span> <span class="nav-text">自定义常量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#系统常量"><span class="nav-number">1.2.2.</span> <span class="nav-text">系统常量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常量如何取值"><span class="nav-number">1.2.3.</span> <span class="nav-text">常量如何取值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#判断常量是否被定义"><span class="nav-number">1.2.4.</span> <span class="nav-text">判断常量是否被定义</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运算符"><span class="nav-number">1.3.</span> <span class="nav-text">运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#算数运算符"><span class="nav-number">1.3.1.</span> <span class="nav-text">算数运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#赋值运算符"><span class="nav-number">1.3.2.</span> <span class="nav-text">赋值运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#比较运算符"><span class="nav-number">1.3.3.</span> <span class="nav-text">比较运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三元运算符"><span class="nav-number">1.3.4.</span> <span class="nav-text">三元运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#逻辑运算符"><span class="nav-number">1.3.5.</span> <span class="nav-text">逻辑运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串链接运算符"><span class="nav-number">1.3.6.</span> <span class="nav-text">字符串链接运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#错误控制运算符"><span class="nav-number">1.3.7.</span> <span class="nav-text">错误控制运算符</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结构"><span class="nav-number">1.4.</span> <span class="nav-text">结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#条件结构"><span class="nav-number">1.4.1.</span> <span class="nav-text">条件结构</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#if…else"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">if…else</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#if…else-if…"><span class="nav-number">1.4.1.2.</span> <span class="nav-text">if…else if…</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#if…else-if…else…"><span class="nav-number">1.4.1.3.</span> <span class="nav-text">if…else if…else…</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#switch…case…"><span class="nav-number">1.4.1.4.</span> <span class="nav-text">switch…case…</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#循环结构"><span class="nav-number">1.4.2.</span> <span class="nav-text">循环结构</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#while"><span class="nav-number">1.4.2.1.</span> <span class="nav-text">while</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#do…while…"><span class="nav-number">1.4.2.2.</span> <span class="nav-text">do…while…</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#for"><span class="nav-number">1.4.2.3.</span> <span class="nav-text">for</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#foreach"><span class="nav-number">1.4.2.4.</span> <span class="nav-text">foreach</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进阶"><span class="nav-number">2.</span> <span class="nav-text">进阶</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数组"><span class="nav-number">2.1.</span> <span class="nav-text">数组</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建空数组"><span class="nav-number">2.1.1.</span> <span class="nav-text">创建空数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#索引数组"><span class="nav-number">2.1.2.</span> <span class="nav-text">索引数组</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#索引数组赋值"><span class="nav-number">2.1.2.1.</span> <span class="nav-text">索引数组赋值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#foreach访问数组中的值"><span class="nav-number">2.1.2.2.</span> <span class="nav-text">foreach访问数组中的值</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关联数组"><span class="nav-number">2.1.3.</span> <span class="nav-text">关联数组</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#关联数组赋值"><span class="nav-number">2.1.3.1.</span> <span class="nav-text">关联数组赋值</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数"><span class="nav-number">2.2.</span> <span class="nav-text">函数</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sunyip</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"sunyip"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
