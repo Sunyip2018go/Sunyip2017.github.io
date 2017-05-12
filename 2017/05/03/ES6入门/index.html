@@ -86,13 +86,13 @@
 
 <meta name="description" content="是时候学习一下ES6了">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ES6入门">
+<meta property="og:title" content="ES6简单讲解">
 <meta property="og:url" content="http://www.sunyip.top/2017/05/03/ES6入门/index.html">
 <meta property="og:site_name" content="Sunyip的漫漫前端路">
 <meta property="og:description" content="是时候学习一下ES6了">
-<meta property="og:updated_time" content="2017-05-05T01:11:41.611Z">
+<meta property="og:updated_time" content="2017-05-08T06:48:59.775Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ES6入门">
+<meta name="twitter:title" content="ES6简单讲解">
 <meta name="twitter:description" content="是时候学习一下ES6了">
 
 
@@ -127,7 +127,7 @@
 
 
 
-  <title> ES6入门 | Sunyip的漫漫前端路 </title>
+  <title> ES6简单讲解 | Sunyip的漫漫前端路 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -284,7 +284,7 @@
             
             
               
-                ES6入门
+                ES6简单讲解
               
             
           </h1>
@@ -376,12 +376,12 @@
 <the rest="" of="" comments="" |="" 余下全文="">
 
 <h3 id="let与const"><a href="#let与const" class="headerlink" title="let与const"></a>let与const</h3><h4 id="let"><a href="#let" class="headerlink" title="let"></a>let</h4><p>es6定义了代码块，所谓的代码块就是用大括号包裹的代码块，比如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function fire(bool)&#123;</div><div class="line">	if(bool)&#123;</div><div class="line">		var fool = &quot;bar&quot;;</div><div class="line">	&#125;</div><div class="line">	console.log(foo);</div><div class="line">&#125;</div><div class="line">fire(true);  //=&gt;bar</div></pre></td></tr></table></figure></p>
-<p>虽然变量foo位于if语句的代码块中，但是Javascript并没有块级作用域，因此被添加到当前的执行环境中-即函数中，在函数内部都能访问的到。<br>另外var还存在着变量提升：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function fire(bool)&#123;</div><div class="line">	if(bool)&#123;</div><div class="line">		var foo = &apos;bar&apos;;</div><div class="line">	&#125;else&#123;</div><div class="line">		console.log(foo);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">fire(bool) //=&gt;underfined</div></pre></td></tr></table></figure></p>
+<p>虽然变量foo位于if语句的代码块中，但是Javascript并没有块级作用域，因此被添加到当前的执行环境中-即函数中，在函数内部都能访问的到。<br>另外var还存在着变量提升：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function fire(bool)&#123;</div><div class="line">	if(bool)&#123;</div><div class="line">		var foo = &apos;bar&apos;;</div><div class="line">	&#125;else&#123;</div><div class="line">		console.log(foo);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">fire(false) //=&gt;underfined</div></pre></td></tr></table></figure></p>
 <p>上述例子返回的是underfined，变量被提升到作用域的顶部，等价于:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function fire(bool)&#123;</div><div class="line">	var foo;</div><div class="line">	if(bool)&#123;</div><div class="line">		foo=&quot;bar&quot;;</div><div class="line">	&#125;else&#123;</div><div class="line">		console.log(foo)</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">fire(false);</div></pre></td></tr></table></figure>
 <p>在javascript中，声明的变量未被赋值会被赋值为underfined,因此，结果是underfined；</p>
 <p>为了解决上述问题，引入let关键字；<br>首先，let定义的变量只在代码块中有效：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function fire(bool)&#123;</div><div class="line">	if(bool)&#123;</div><div class="line">		var foo = &quot;bar&quot;;</div><div class="line">	&#125;</div><div class="line">	console.log(foo);</div><div class="line">&#125;</div><div class="line">fire(true)  //=&gt;foo is not defined  foo未定义</div></pre></td></tr></table></figure></p>
-<p>因此，使用let上述问题完全解决。</p>
+<p>因此，使用let上述问题完全解决。<br>不允许在相同的作用域重复命名同意变量！！！</p>
 <h4 id="const"><a href="#const" class="headerlink" title="const"></a>const</h4><p>const与let的基本用法相同，定义的变量也具有块级作用域，也不会发生变量提升，不同的地方，const定义的变量只能赋值一次。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">const a = 1;</div><div class="line">a=2;  //执行到这就报错，Uncaught TypeError: Assignment to constant variable</div><div class="line">console.log(a);</div></pre></td></tr></table></figure>
 <p>对于数组和对象，值是可以改变的：</p>
@@ -403,8 +403,50 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">let a = 1;</div><div class="line">let b =2;</div><div class="line">let c = 3;</div></pre></td></tr></table></figure>
 <p>ES6允许这样写:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">let [a,b,c] = [1,2,3];</div></pre></td></tr></table></figure>
-<p>上面代码表示，可以从数组中提取值，按照对应的位置，对变量赋值。   </p>
-<h3 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h3></the>
+<p>上面代码表示，可以从数组中提取值，按照对应的位置，对变量赋值。  </p>
+<p>来一个深度匹配:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function setting()&#123;</div><div class="line">	return &#123;display:&#123;color:&apos;red&apos;&#125;,keyboard:&#123;layout:&apos;querty&apos;&#125;&#125;;</div><div class="line">&#125;</div><div class="line">const &#123;display:&#123;color:displayColor&#125;,keyboard:&#123;layout:keyboardLayout&#125;&#125; = setting();</div><div class="line">console.log(displayColor,keyboardLayout)  // red querty</div></pre></td></tr></table></figure>
+<p>箭头函数还有一个特性，就是不会改变函数内部定义的函数的this指向，举个例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var name = The window;</div><div class="line">var object = &#123;</div><div class="line">	name:&apos;The object&apos;,</div><div class="line">	getNameFunc:function()&#123;</div><div class="line">		return function()&#123;</div><div class="line">			return this.name;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">alert(object.getNameFunc()());  //&apos;The window&apos;</div></pre></td></tr></table></figure>
+<p>函数getNameFunc里面返回了一个函数，这个函数当被调用的时候，this指向的是window，所以this.name是The window;<br>使用箭头函数可以完美的解决这个问题：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var name = &apos;The window&apos;;</div><div class="line">var object = &#123;</div><div class="line">	name:&apos;The object&apos;,</div><div class="line">	getNameFunc:function()&#123;</div><div class="line">		return ()=&gt;this.name</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">alert(object.getNameFunc()()); //&apos;The object&apos;</div></pre></td></tr></table></figure>
+<h3 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h3><p>es5填充字符串需要这样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var a= 1,b = 2;</div><div class="line">document.getElementById(&quot;test&quot;).appendChild(&apos;&lt;b&gt;&apos;+a+&apos;&lt;/b&gt;&apos;);</div></pre></td></tr></table></figure></p>
+<p>在es6中可以这样写：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var a = 1,b = 2;</div><div class="line">document.getElementById(&apos;test&apos;).appendChild(`&lt;b&gt;$&#123;a&#125;&lt;/b&gt;`)</div></pre></td></tr></table></figure>
+<p>es6定义字符串写在反引号<code>`` </code>中；</p>
+<h3 id="Math对象的扩展"><a href="#Math对象的扩展" class="headerlink" title="Math对象的扩展"></a>Math对象的扩展</h3><h4 id="Math-trunc-去掉小数部分"><a href="#Math-trunc-去掉小数部分" class="headerlink" title="Math.trunc() 去掉小数部分"></a>Math.trunc() 去掉小数部分</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">let a = 1.23;</div><div class="line">console.log(Math.trunc(a));  // 1</div></pre></td></tr></table></figure>
+<h4 id="Math-sign-判断一个数是正数、负数还是零"><a href="#Math-sign-判断一个数是正数、负数还是零" class="headerlink" title="Math.sign() 判断一个数是正数、负数还是零"></a>Math.sign() 判断一个数是正数、负数还是零</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">let a = 1.23;</div><div class="line">let b = -2;</div><div class="line">let c = 0;</div><div class="line">console.log(Math.sign(a));  // 1</div><div class="line">console.log(Math.sign(b));  // -1</div><div class="line">console.log(Math.sign(c));  // 0</div></pre></td></tr></table></figure>
+<p>1代表正数，-1代表负数，0代表零；</p>
+<h3 id="函数扩展"><a href="#函数扩展" class="headerlink" title="函数扩展"></a>函数扩展</h3><h4 id="默认参数"><a href="#默认参数" class="headerlink" title="默认参数"></a>默认参数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">ES6</div><div class="line">function f(x,y=7,z=42)&#123;</div><div class="line">	return x+y+z;</div><div class="line">&#125;</div><div class="line">f(1) === 50</div><div class="line"></div><div class="line">ES5</div><div class="line">function f(x,y,z)&#123;</div><div class="line">	if(y===undefined)&#123;</div><div class="line">		y=7;</div><div class="line">	&#125;</div><div class="line">	if(z===undefined)&#123;</div><div class="line">		z=42;</div><div class="line">	&#125;</div><div class="line">	return x+y+z;</div><div class="line">&#125;</div><div class="line">f(1) === 50</div></pre></td></tr></table></figure>
+<p>ES6中允许直接给函数的参数赋值；</p>
+<h5 id="rest参数"><a href="#rest参数" class="headerlink" title="rest参数"></a>rest参数</h5><p>先看例子:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">ES6</div><div class="line">function f(x,y,...a)&#123;</div><div class="line">	return (x+y)*a.length</div><div class="line">&#125;</div><div class="line">f(1,2,&apos;hello&apos;,true,9) ===9</div><div class="line"></div><div class="line">ES5</div><div class="line">function f(x,y)&#123;</div><div class="line">	var a = Array.prototype.slice.call(arguments,2);</div><div class="line">	return (x+y)*a.length;</div><div class="line">&#125;</div><div class="line">f(1,2,&apos;hello&apos;,true,9) ===9</div></pre></td></tr></table></figure>
+<p>rest获取函数的多余参数，这样就不需要使用arguments对象了，写法:<code>...变量名</code>；<br><code>arguments</code>是一个类似数组的对象, 对应于传递给函数的参数,通过<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">let args = Array.prototype.slice.call(arguments); </div><div class="line"></div><div class="line">let args = [].slice.call(arguments);</div></pre></td></tr></table></figure></p>
+<p>来转变成真正的数组；<br><code>Array.prototype.slice</code>方法返回一个从开始到结束（不包括结束）选择的数组的一部分浅拷贝到一个新数组对象；<br><code>Array.prototype.slice.call(arguments,2)</code>是获取多余的参数，不包括前两个，转变成数组；</p>
+<h3 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h3><h5 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h5><p><code>Promise</code>定义了未来发生的事件，不知道最后执行的结果是什么，通过Promise实例对象知晓结果。(个人理解)<br>Promise有三种状态：<br>1. pending 刚被创建的初始化状态<br>2. resolved 成功的状态<br>3. reject 失败的状态</p>
+<p>基本语法:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var promise = new Promise(function(resolve,reject))&#123;  //创建Promise实例</div><div class="line">	// Promise的回调函数接收两个参数，一个是成功后的函数，另一个是失败后的函数</div><div class="line">	// 异步处理</div><div class="line">	// 处理结束后，调用resolve或reject</div><div class="line">&#125;);</div><div class="line"></div><div class="line">promise.then(function()&#123;&#125;,function()&#123;&#125;);  // 第一个function为成功的函数，第二个function为失败的函数</div><div class="line">每个Promise实例都有.then()的实例方法;</div></pre></td></tr></table></figure>
+<p>举个实例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">function asyncFunction() &#123;   //函数返回了一个Promise实例</div><div class="line">    </div><div class="line">    return new Promise(function (resolve, reject) &#123;</div><div class="line">        setTimeout(function () &#123;</div><div class="line">            resolve(&apos;Async Hello world&apos;);  // resolve指的是成功，reject为失败</div><div class="line">        &#125;, 16);</div><div class="line">    &#125;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">asyncFunction().then(function (value) &#123;  // 第一个then代表成功后执行的函数，value的值为resolve的参数</div><div class="line">    console.log(value);    // =&gt; &apos;Async Hello world&apos;</div><div class="line">&#125;).catch(function (error) &#123;   // catch为失败后执行的函数</div><div class="line">    console.log(error);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>当然也可以只使用then实现上述的结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">function asyncFunction() &#123;   //函数返回了一个Promise实例</div><div class="line">    </div><div class="line">    return new Promise(function (resolve, reject) &#123;</div><div class="line">        setTimeout(function () &#123;</div><div class="line">            resolve(&apos;Async Hello world&apos;);  // resolve指的是成功，reject为失败</div><div class="line">        &#125;, 16);</div><div class="line">    &#125;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">asyncFunction().then(function(val)&#123;</div><div class="line">    console.log(val)</div><div class="line">&#125;,function(error)&#123;</div><div class="line">    console.log(error)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>再看一个例子，用Promise实现ajax请求：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">function getURL(URL) &#123;</div><div class="line">    return new Promise(function (resolve, reject) &#123;</div><div class="line">        var req = new XMLHttpRequest();</div><div class="line">        req.open(&apos;GET&apos;, URL, true);</div><div class="line">        req.onload = function () &#123;</div><div class="line">            if (req.status === 200) &#123;</div><div class="line">                resolve(req.responseText);</div><div class="line">            &#125; else &#123;</div><div class="line">                reject(new Error(req.statusText));</div><div class="line">            &#125;</div><div class="line">        &#125;;</div><div class="line">        req.onerror = function () &#123;  //  onerror为XHR的方法</div><div class="line">            reject(new Error(req.statusText));</div><div class="line">        &#125;;</div><div class="line">        req.send();</div><div class="line">    &#125;);</div><div class="line">&#125;</div><div class="line">// 运行示例</div><div class="line">var URL = &quot;http://httpbin.org/get&quot;;</div><div class="line">getURL(URL).then(function onFulfilled(value)&#123;</div><div class="line">    console.log(value);</div><div class="line">&#125;).catch(function onRejected(error)&#123;</div><div class="line">    console.error(error);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p><code>new Error</code>为js的原生提供的一个Error构造函数，所有抛出的错误都是这个构造函数的实例；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var err = new Error(&apos;出错了&apos;);</div><div class="line">err.message;  // &quot;出错了&quot;</div></pre></td></tr></table></figure>
+<p>message是Error的属性，表示出错的提示信息，同时还有name和stack两个属性，分别表示错误的名称和错误的堆栈，是非标准的，可能某些浏览器不支持。</p>
+<h5 id="实战Promise"><a href="#实战Promise" class="headerlink" title="实战Promise"></a>实战Promise</h5><h6 id="Promise-resolve-成功的快捷方式"><a href="#Promise-resolve-成功的快捷方式" class="headerlink" title="Promise.resolve 成功的快捷方式"></a>Promise.resolve 成功的快捷方式</h6><p>写一个成功的Promise实例，一般都这样写：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">new Promise(function(resolve)&#123;</div><div class="line">	resolve(42);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>有了<code>Promise.resolve</code>可以这样写：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Promise.resolve(42).then()</div></pre></td></tr></table></figure>
+<p>直接创建了Promise成功实例，超级方便；</p>
+<p>Promise.resolve还有另外一个作用，就是讲thenable对象转变成Promise对象，问题来了，啥叫thenable，thenable就是有.then方法的对象，比如：jQuery.ajax()；</p>
+<p>举例子:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var promise = Promise.resolve($.ajax(&apos;/json/comment.json&apos;));</div><div class="line">promise.then(function(val)&#123;</div><div class="line">	console.log(val);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h5 id="Promise-reject-失败的快捷方式"><a href="#Promise-reject-失败的快捷方式" class="headerlink" title="Promise.reject  失败的快捷方式"></a>Promise.reject  失败的快捷方式</h5><p>直接举例:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">new Promise(function(resolve,reject)&#123;</div><div class="line">	reject(&apos;失败了&apos;);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">Promise.reject(&quot;失败了&quot;).catch(function(val)&#123;</div><div class="line">	console.log(val);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>Promise部分参考:<a href="http://liubin.org/promises-book/#ch2-promise-resolve" target="_blank" rel="external">http://liubin.org/promises-book/#ch2-promise-resolve</a></p>
+</the>
       
     </div>
 
@@ -475,7 +517,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2017/05/03/ES6入门/"
-           data-title="ES6入门" data-url="http://www.sunyip.top/2017/05/03/ES6入门/">
+           data-title="ES6简单讲解" data-url="http://www.sunyip.top/2017/05/03/ES6入门/">
       </div>
     
   </div>
@@ -522,7 +564,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -531,7 +573,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -540,7 +582,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -575,7 +617,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#let与const"><span class="nav-number">1.</span> <span class="nav-text">let与const</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#let"><span class="nav-number">1.1.</span> <span class="nav-text">let</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#const"><span class="nav-number">1.2.</span> <span class="nav-text">const</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#箭头函数"><span class="nav-number">2.</span> <span class="nav-text">箭头函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise"><span class="nav-number">3.</span> <span class="nav-text">Promise</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#let与const"><span class="nav-number">1.</span> <span class="nav-text">let与const</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#let"><span class="nav-number">1.1.</span> <span class="nav-text">let</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#const"><span class="nav-number">1.2.</span> <span class="nav-text">const</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#箭头函数"><span class="nav-number">2.</span> <span class="nav-text">箭头函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模板字符串"><span class="nav-number">3.</span> <span class="nav-text">模板字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Math对象的扩展"><span class="nav-number">4.</span> <span class="nav-text">Math对象的扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Math-trunc-去掉小数部分"><span class="nav-number">4.1.</span> <span class="nav-text">Math.trunc() 去掉小数部分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Math-sign-判断一个数是正数、负数还是零"><span class="nav-number">4.2.</span> <span class="nav-text">Math.sign() 判断一个数是正数、负数还是零</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数扩展"><span class="nav-number">5.</span> <span class="nav-text">函数扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#默认参数"><span class="nav-number">5.1.</span> <span class="nav-text">默认参数</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#rest参数"><span class="nav-number">5.1.1.</span> <span class="nav-text">rest参数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise"><span class="nav-number">6.</span> <span class="nav-text">Promise</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#基本介绍"><span class="nav-number">6.0.1.</span> <span class="nav-text">基本介绍</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#实战Promise"><span class="nav-number">6.0.2.</span> <span class="nav-text">实战Promise</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Promise-resolve-成功的快捷方式"><span class="nav-number">6.0.2.1.</span> <span class="nav-text">Promise.resolve 成功的快捷方式</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Promise-reject-失败的快捷方式"><span class="nav-number">6.0.3.</span> <span class="nav-text">Promise.reject  失败的快捷方式</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
